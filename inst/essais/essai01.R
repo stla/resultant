@@ -14,8 +14,8 @@ resultant:::resultantCPP(
 # y^4 - y^3 + y^2 - 2*x^2*y + x^4
 # y - 2*x^2
 library(qspray)
-x <- qlone(1)
-y <- qlone(2)
+x <- qlone(2)
+y <- qlone(1)
 f <- y^4 - y^3 + y^2 - 2*x^2*y + x^4
 g <- y - 2*x^2
 powsf <- vapply(f@powers, function(pwrs) {
@@ -29,7 +29,12 @@ powsg <- vapply(g@powers, function(pwrs) {
   out
 }, integer(2L))
 
-resultant:::resultantCPP2(
+R <- resultant:::resultantCPP2(
   powsf, f@coeffs,
   powsg, g@coeffs
 )
+
+16*(x - "1/2")^4*x^4
+
+d <- length(R)-1L
+qsprayMaker(powers = as.list(0L:d), coeffs = R)

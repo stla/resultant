@@ -83,7 +83,7 @@ Poly2 makePoly2(
 }
 
 // [[Rcpp::export]]
-void resultantCPP2(
+Rcpp::CharacterVector resultantCPP2(
     Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
     Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
 ) {
@@ -92,4 +92,13 @@ void resultantCPP2(
   // Resultant computation:
   PT2::Resultant resultant;
   std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;
+  Poly1 R = resultant(F, G);
+  PT1::Degree degree;
+  int d = degree(R);
+  PT1::Get_coefficient getCoefficient;
+  Rcpp::CharacterVector Coeffs(d + 1);
+  for(int i = 0; i <= d; i++) {
+    Coeffs(i) = q2str(getCoefficient(R, i));
+  }
+  return Coeffs;
 }

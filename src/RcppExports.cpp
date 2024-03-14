@@ -26,16 +26,17 @@ BEGIN_RCPP
 END_RCPP
 }
 // resultantCPP2
-void resultantCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
+Rcpp::CharacterVector resultantCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
 RcppExport SEXP _resultant_resultantCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    resultantCPP2(PowersF, CoeffsF, PowersG, CoeffsG);
-    return R_NilValue;
+    rcpp_result_gen = Rcpp::wrap(resultantCPP2(PowersF, CoeffsF, PowersG, CoeffsG));
+    return rcpp_result_gen;
 END_RCPP
 }
 
