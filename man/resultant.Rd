@@ -4,15 +4,21 @@
 \alias{resultant}
 \title{Resultant of two polynomials}
 \usage{
-resultant(qspray1, qspray2)
+resultant(qspray1, qspray2, var = 1)
 }
 \arguments{
-\item{qspray1, qspray2}{two \code{qspray} polynomials with at more two
+\item{qspray1, qspray2}{two \code{qspray} polynomials with at more three
 variables}
+
+\item{var}{integer indicating with respect to which variable the resultant
+is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})}
 }
 \value{
 For univariate polynomials, this returns a fraction given as a
-  string. For bivariate polynomials, this returns a univariate
+  string.
+  For bivariate polynomials, this returns a univariate
+  \code{qspray} polynomial.
+  For trivariate polynomials, this returns a bivariate
   \code{qspray} polynomial.
 }
 \description{
@@ -25,5 +31,8 @@ x <- qlone(1)
 y <- qlone(2)
 f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4
 g <- x - 2*y^2
-resultant(f, g)
+Rx <- resultant(f, g, var = 1)
+prettyQspray(Rx, "y")
+Ry <- resultant(f, g, var = 2)
+prettyQspray(Ry, "x")
 }
