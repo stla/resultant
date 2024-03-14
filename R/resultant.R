@@ -3,6 +3,8 @@
 #'
 #' @param qspray1,qspray2 two \code{qspray} polynomials with at more three
 #'   variables
+#' @param var integer indicating with respect to which variable the resultant
+#'   is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})
 #'
 #' @return For univariate polynomials, this returns a fraction given as a
 #'   string.
@@ -29,7 +31,9 @@ resultant <- function(qspray1, qspray2, var = 1) {
     stop("The two polynomials are constant.")
   }
   if(n >= 4L) {
-    stop("The implementation only allows univariate and bivariate polynomials.")
+    stop(
+      "The implementation only allows polynomials with at more three variables."
+    )
   }
   stopifnot(isPositiveInteger(var))
   if(var > n) {
@@ -55,7 +59,8 @@ resultant <- function(qspray1, qspray2, var = 1) {
   } else if(n == 2L){
     coeffs <- resultantCPP2(
       pows1, coeffs1,
-      pows2, coeffs2
+      pows2, coeffs2,
+      var == 1L
     )
     d <- length(coeffs) - 1L
     qsprayMaker(powers = as.list(0L:d), coeffs = coeffs)

@@ -89,33 +89,21 @@ Rcpp::List getPolynomial(
                             Rcpp::Named("Coeffs") = Coeffs);
 }
 
-Poly2 makePoly2(
-    Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
-) {
-  PT2::Construct_polynomial constructPolynomial;
-  int nterms = Coeffs.size();
-  std::list<Monomial2> terms;
-  for(int i = 0; i < nterms; i++) {
-    Rcpp::IntegerVector powers = Powers(Rcpp::_, i);
-    terms.push_back(
-      std::make_pair(
-        CGAL::Exponent_vector(powers.begin(), powers.end()),
-        CGAL::Gmpq(Rcpp::as<std::string>(Coeffs(i)))
-      )
-    );
-  }
-  return constructPolynomial(terms.begin(), terms.end());
-}
-
 // [[Rcpp::export]]
 Rcpp::CharacterVector resultantCPP2(
     Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
-    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+    bool permute
 ) {
   CGAL::IO::set_pretty_mode(std::cout);
 
   Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
-  Poly2 G = makePoly2(PowersG, CoeffsG);
+  Poly2 G = makePolyX<Poly2, PT2, Monomial2>(PowersG, CoeffsG);
+  if(permute) {
+    PT2::Swap swap;
+    F = swap(F, 0, 1);
+    G = swap(G, 0, 1);
+  }
   PT2::Resultant resultant;
   std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;
   Poly1 R = resultant(F, G);
