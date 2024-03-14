@@ -29,32 +29,22 @@ resultant <- function(qspray1, qspray2) {
   }
   coeffs1 <- qspray1@coeffs
   coeffs2 <- qspray2@coeffs
+  pows1 <- vapply(qspray1@powers, function(pwrs) {
+    out <- integer(n)
+    out[seq_along(pwrs)] <- pwrs
+    out
+  }, integer(n))
+  pows2 <- vapply(qspray2@powers, function(pwrs) {
+    out <- integer(n)
+    out[seq_along(pwrs)] <- pwrs
+    out
+  }, integer(n))
   if(n == 1L) {
-    pows1 <- vapply(qspray1@powers, function(pwrs) {
-      out <- integer(1L)
-      out[seq_along(pwrs)] <- pwrs
-      out
-    }, integer(1L))
-    pows2 <- vapply(qspray2@powers, function(pwrs) {
-      out <- integer(1L)
-      out[seq_along(pwrs)] <- pwrs
-      out
-    }, integer(1L))
     resultantCPP1(
       pows1, coeffs1,
       pows2, coeffs2
     )
   } else {
-    pows1 <- vapply(qspray1@powers, function(pwrs) {
-      out <- integer(2L)
-      out[seq_along(pwrs)] <- pwrs
-      out
-    }, integer(2L))
-    pows2 <- vapply(qspray2@powers, function(pwrs) {
-      out <- integer(2L)
-      out[seq_along(pwrs)] <- pwrs
-      out
-    }, integer(2L))
     coeffs <- resultantCPP2(
       pows1, coeffs1,
       pows2, coeffs2
