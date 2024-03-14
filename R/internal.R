@@ -15,7 +15,8 @@ integerRange <- function(start, stop) {
 }
 
 makePermutation <- function(n, var) {
+  var <- as.integer(var)
   p <- c(integerRange(1L, var-1L), integerRange(var+1L, n), var)
   p[p] <- seq_along(p)
-  p
+  p - 1L
 }

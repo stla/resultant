@@ -71,7 +71,7 @@ resultant <- function(qspray1, qspray2, var = 1) {
     R <- resultantCPP3(
       pows1, coeffs1,
       pows2, coeffs2,
-      makePermutation(3L, var) - 1L
+      makePermutation(3L, var)
     )
     qsprayMaker(
       powers = apply(R[["Powers"]], 2L, identity, simplify = FALSE),
