@@ -20,5 +20,8 @@ typedef std::pair<CGAL::Exponent_vector, PT1::Innermost_coefficient_type> Monomi
 typedef CGAL::Polynomial_type_generator<CGAL::Gmpq, 2>::Type Poly2;
 typedef CGAL::Polynomial_traits_d<Poly2>                     PT2;
 typedef std::pair<CGAL::Exponent_vector, PT2::Innermost_coefficient_type> Monomial2;
+typedef CGAL::Polynomial_type_generator<CGAL::Gmpq, 3>::Type Poly3;
+typedef CGAL::Polynomial_traits_d<Poly3>                     PT3;
+typedef std::pair<CGAL::Exponent_vector, PT3::Innermost_coefficient_type> Monomial3;
 
 #endif

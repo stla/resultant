@@ -128,3 +128,18 @@ Rcpp::CharacterVector resultantCPP2(
   }
   return Coeffs;
 }
+
+// [[Rcpp::export]]
+Rcpp::List resultantCPP3(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  CGAL::IO::set_pretty_mode(std::cout);
+
+  Poly3 F = makePolyX<Poly3, PT3, Monomial3>(PowersF, CoeffsF);
+  Poly3 G = makePolyX<Poly3, PT3, Monomial3>(PowersG, CoeffsG);
+  PT3::Resultant resultant;
+  std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;
+  Poly2 R = resultant(F, G);
+  return getPolynomial<Poly2, PT2, Monomial2>(R, 2);
+}
