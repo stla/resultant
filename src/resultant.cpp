@@ -19,12 +19,9 @@ std::string q2str(CGAL::Gmpq r) {
 Poly1 makePoly1(
     Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs
 ) {
-
-  PT1::Construct_polynomial construct_polynomial;
-
+  PT1::Construct_polynomial constructPolynomial;
   int nterms = Coeffs.size();
   std::list<Monomial1> terms;
-
   for(int i = 0; i < nterms; i++) {
     terms.push_back(
       std::make_pair(
@@ -33,28 +30,19 @@ Poly1 makePoly1(
       )
     );
   }
-
-  return construct_polynomial(terms.begin(), terms.end());
+  return constructPolynomial(terms.begin(), terms.end());
 }
 
 // [[Rcpp::export]]
-Rcpp::CharacterVector resultantCPP(
+Rcpp::CharacterVector resultantCPP1(
   Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF,
   Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG
 ) {
   Poly1 F = makePoly1(PowersF, CoeffsF);
   Poly1 G = makePoly1(PowersG, CoeffsG);
-  // Resultant computation:
   PT1::Resultant resultant;
   CGAL::Gmpq r = resultant(F, G);
   std::cout << "The resultant of F and G is: " << r << std::endl;
-/*  int d = 4;
-  PT1::Get_coefficient getCoefficient;
-  Rcpp::CharacterVector Coeffs(d + 1);
-  for(int i = 0; i <= d; i++) {
-    Coeffs(i) = q2str(getCoefficient(R, d));
-  }
-  return Coeffs; */
   Rcpp::CharacterVector out = Rcpp::CharacterVector::create(q2str(r));
   return out;
 }
@@ -62,13 +50,9 @@ Rcpp::CharacterVector resultantCPP(
 Poly2 makePoly2(
     Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
 ) {
-  CGAL::IO::set_pretty_mode(std::cout);
-
   PT2::Construct_polynomial constructPolynomial;
-
   int nterms = Coeffs.size();
   std::list<Monomial2> terms;
-
   for(int i = 0; i < nterms; i++) {
     Rcpp::IntegerVector powers = Powers(Rcpp::_, i);
     terms.push_back(
@@ -78,7 +62,6 @@ Poly2 makePoly2(
       )
     );
   }
-
   return constructPolynomial(terms.begin(), terms.end());
 }
 
@@ -87,9 +70,10 @@ Rcpp::CharacterVector resultantCPP2(
     Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
     Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
 ) {
+  CGAL::IO::set_pretty_mode(std::cout);
+
   Poly2 F = makePoly2(PowersF, CoeffsF);
   Poly2 G = makePoly2(PowersG, CoeffsG);
-  // Resultant computation:
   PT2::Resultant resultant;
   std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;
   Poly1 R = resultant(F, G);

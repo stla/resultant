@@ -11,9 +11,9 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// resultantCPP
-Rcpp::CharacterVector resultantCPP(Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_resultantCPP(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+// resultantCPP1
+Rcpp::CharacterVector resultantCPP1(Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG);
+RcppExport SEXP _resultant_resultantCPP1(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -21,7 +21,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(resultantCPP(PowersF, CoeffsF, PowersG, CoeffsG));
+    rcpp_result_gen = Rcpp::wrap(resultantCPP1(PowersF, CoeffsF, PowersG, CoeffsG));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -41,7 +41,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_resultant_resultantCPP", (DL_FUNC) &_resultant_resultantCPP, 4},
+    {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
     {"_resultant_resultantCPP2", (DL_FUNC) &_resultant_resultantCPP2, 4},
     {NULL, NULL, 0}
 };

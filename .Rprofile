@@ -6,6 +6,7 @@ dllunload <- function(){
 
 myinstall <- function() {
   try(pkgload::unload("resultant"))
+  Rcpp::compileAttributes()
   if(rstudioapi::isAvailable()) {
     rstudioapi::restartSession(
       "devtools::install(quick = TRUE, keep_source = TRUE)"
