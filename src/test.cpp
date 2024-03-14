@@ -1,7 +1,7 @@
 #include "resultant.h"
 
 Poly1 makePoly1(
-    Rcpp::IntegerVector Powers, Rcpp::IntegerVector Coeffs
+    Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs
 ) {
 
   PT1::Construct_polynomial construct_polynomial;
@@ -13,7 +13,7 @@ Poly1 makePoly1(
     terms.push_back(
       std::make_pair(
         CGAL::Exponent_vector(Powers(i)),
-        Coeffs(i)
+        CGAL::Gmpq(Rcpp::as<std::string>(Coeffs(i)))
       )
     );
   }
@@ -23,8 +23,8 @@ Poly1 makePoly1(
 
 // [[Rcpp::export]]
 void resultantCPP(
-  Rcpp::IntegerVector PowersF, Rcpp::IntegerVector CoeffsF,
-  Rcpp::IntegerVector PowersG, Rcpp::IntegerVector CoeffsG
+  Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG
 ) {
   Poly1 F = makePoly1(PowersF, CoeffsF);
   Poly1 G = makePoly1(PowersG, CoeffsG);
