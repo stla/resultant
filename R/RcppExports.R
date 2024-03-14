@@ -5,3 +5,7 @@ resultantCPP <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
     .Call(`_resultant_resultantCPP`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
+resultantCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    invisible(.Call(`_resultant_resultantCPP2`, PowersF, CoeffsF, PowersG, CoeffsG))
+}
+

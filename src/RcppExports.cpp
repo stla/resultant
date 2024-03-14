@@ -25,9 +25,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// resultantCPP2
+void resultantCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
+RcppExport SEXP _resultant_resultantCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    resultantCPP2(PowersF, CoeffsF, PowersG, CoeffsG);
+    return R_NilValue;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP", (DL_FUNC) &_resultant_resultantCPP, 4},
+    {"_resultant_resultantCPP2", (DL_FUNC) &_resultant_resultantCPP2, 4},
     {NULL, NULL, 0}
 };
 

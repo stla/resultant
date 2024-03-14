@@ -15,7 +15,10 @@
 #include <CGAL/Polynomial/Monomial_representation.h>
 
 typedef CGAL::Polynomial_type_generator<CGAL::Gmpq, 1>::Type Poly1;
-typedef CGAL::Polynomial_traits_d<Poly1>              PT1;
+typedef CGAL::Polynomial_traits_d<Poly1>                     PT1;
 typedef std::pair<CGAL::Exponent_vector, PT1::Innermost_coefficient_type> Monomial1;
+typedef CGAL::Polynomial_type_generator<CGAL::Gmpq, 2>::Type Poly2;
+typedef CGAL::Polynomial_traits_d<Poly2>                     PT2;
+typedef std::pair<CGAL::Exponent_vector, PT2::Innermost_coefficient_type> Monomial2;
 
 #endif
