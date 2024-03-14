@@ -10,6 +10,10 @@ resultant:::resultantCPP(
   c(2L, 0L), c("1", "-3")
 )
 
+x <- qlone(1)
+f <- x^2 - 2*x - 1
+g <- x^2 - 3
+
 
 # y^4 - y^3 + y^2 - 2*x^2*y + x^4
 # y - 2*x^2
