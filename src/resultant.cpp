@@ -47,6 +47,48 @@ Rcpp::CharacterVector resultantCPP1(
   return out;
 }
 
+template <typename PolyX, typename PTX, typename MonomialX>
+PolyX makePolyX(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  typename PTX::Construct_polynomial constructPolynomial;
+  int nterms = Coeffs.size();
+  std::list<MonomialX> terms;
+  for(int i = 0; i < nterms; i++) {
+    Rcpp::IntegerVector powers = Powers(Rcpp::_, i);
+    terms.push_back(
+      std::make_pair(
+        CGAL::Exponent_vector(powers.begin(), powers.end()),
+        CGAL::Gmpq(Rcpp::as<std::string>(Coeffs(i)))
+      )
+    );
+  }
+  return constructPolynomial(terms.begin(), terms.end());  
+}
+
+template <typename PolyX, typename PTX, typename MonomialX>
+Rcpp::List getPolynomial(
+  PolyX P, int X
+) {
+  std::list<MonomialX> monomials;
+  typename PTX::Monomial_representation mrepr;
+  mrepr(P, std::back_inserter(monomials));
+  int n = monomials.size();
+  Rcpp::IntegerMatrix Powers(X, n);
+  Rcpp::CharacterVector Coeffs(n);
+  typename std::list<MonomialX>::iterator it_monoms;
+  int i = 0;
+  for(it_monoms = monomials.begin(); it_monoms != monomials.end(); it_monoms++) {
+    CGAL::Exponent_vector exponents = (*it_monoms).first;
+    Rcpp::IntegerVector powers(exponents.begin(), exponents.end());
+    Powers(Rcpp::_, i) = powers;
+    Coeffs(i) = q2str((*it_monoms).second);
+    i++;
+  }
+  return Rcpp::List::create(Rcpp::Named("Powers") = Powers,
+                            Rcpp::Named("Coeffs") = Coeffs);
+}
+
 Poly2 makePoly2(
     Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
 ) {
@@ -72,7 +114,7 @@ Rcpp::CharacterVector resultantCPP2(
 ) {
   CGAL::IO::set_pretty_mode(std::cout);
 
-  Poly2 F = makePoly2(PowersF, CoeffsF);
+  Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
   Poly2 G = makePoly2(PowersG, CoeffsG);
   PT2::Resultant resultant;
   std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;

@@ -8,6 +8,7 @@
 #'   string. For bivariate polynomials, this returns a univariate
 #'   \code{qspray} polynomial.
 #' @export
+#' @importFrom qspray qsprayMaker
 #'
 #' @examples
 #' library(resultant)

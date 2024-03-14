@@ -2,4 +2,5 @@
 
 export(resultant)
 importFrom(Rcpp,evalCpp)
+importFrom(qspray,qsprayMaker)
 useDynLib(resultant, .registration=TRUE)
