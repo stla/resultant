@@ -39,16 +39,16 @@ ggplot() +
 ###
 library(qspray)
 library(resultant)
-library(gmp)
+
 x <- qlone(1)
 y <- qlone(2)
 p <- f(x, y)
 q <- g(x, y)
 
 R <- resultant(p, q, var = 1)
-coeffs <- sapply(0:8, function(k) asNumeric(getCoefficient(R, k)))
-unique(polyroot(coeffs))
 prettyQspray(R, vars = "x")
+#coeffs <- sapply(0:8, function(k) gmp::asNumeric(getCoefficient(R, k)))
+
 
 library(giacR)
 giac <- Giac$new()
@@ -56,5 +56,14 @@ command <- sprintf("roots(%s)", prettyQspray(R, vars = "x"))
 giac$execute(command)
 giac$close()
 
-substituteQspray(p, c(NA, "1/2"))
+px <- substituteQspray(p, c(NA, "0"))
+qx <- substituteQspray(q, c(NA, "0"))
+prettyQspray(px, "x")
+prettyQspray(qx, "x")
+
+px <- substituteQspray(p, c(NA, "1/2"))
+qx <- substituteQspray(q, c(NA, "1/2"))
+prettyQspray(px, "x")
+prettyQspray(qx, "x")
+
 
