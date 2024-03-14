@@ -6,5 +6,5 @@ test_that("Trivariate example", {
   f <- x^2 + y^2 + z^2 + 2
   g <- x*y + y*z
   R <- resultant(f, g, var = 3)
-  expect_equal(prettyQspray(R, c("x", "y")), "y^4 + 2*x^2*y^2 + 2*y^2")
+  expect_true(R == y^4 + 2*x^2*y^2 + 2*y^2)
 })
