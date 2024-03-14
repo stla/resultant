@@ -1,5 +1,21 @@
 #include "resultant.h"
 
+std::string q2str(CGAL::Gmpq r) {
+  CGAL::Gmpz numer = r.numerator();
+  CGAL::Gmpz denom = r.denominator();
+  size_t n = mpz_sizeinbase(numer.mpz(), 10) + 2;
+  size_t d = mpz_sizeinbase(denom.mpz(), 10) + 2;
+  char* cnumer = new char[n];
+  char* cdenom = new char[d];
+  cnumer = mpz_get_str(cnumer, 10, numer.mpz());
+  cdenom = mpz_get_str(cdenom, 10, denom.mpz());
+  std::string snumer = cnumer;
+  std::string sdenom = cdenom;
+  delete[] cnumer;
+  delete[] cdenom;
+  return snumer + "/" + sdenom;
+}
+
 Poly1 makePoly1(
     Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs
 ) {
@@ -22,7 +38,7 @@ Poly1 makePoly1(
 }
 
 // [[Rcpp::export]]
-void resultantCPP(
+Rcpp::CharacterVector resultantCPP(
   Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF,
   Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG
 ) {
@@ -30,5 +46,15 @@ void resultantCPP(
   Poly1 G = makePoly1(PowersG, CoeffsG);
   // Resultant computation:
   PT1::Resultant resultant;
-  std::cout << "The resultant of F and G is: " << resultant(F,G) << std::endl;
+  CGAL::Gmpq r = resultant(F, G);
+  std::cout << "The resultant of F and G is: " << r << std::endl;
+/*  int d = 4;
+  PT1::Get_coefficient getCoefficient;
+  Rcpp::CharacterVector Coeffs(d + 1);
+  for(int i = 0; i <= d; i++) {
+    Coeffs(i) = q2str(getCoefficient(R, d));
+  }
+  return Coeffs; */
+  Rcpp::CharacterVector out = Rcpp::CharacterVector::create(q2str(r));
+  return out;
 }
