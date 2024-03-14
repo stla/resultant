@@ -18,7 +18,8 @@ powsg <- vapply(g@powers, function(pwrs) {
 
 R <- resultant:::resultantCPP3(
   powsf, f@coeffs,
-  powsg, g@coeffs
+  powsg, g@coeffs,
+  1L
 )
 
 qsprayMaker(

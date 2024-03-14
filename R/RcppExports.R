@@ -9,7 +9,7 @@ resultantCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
     .Call(`_resultant_resultantCPP2`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
-resultantCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_resultantCPP3`, PowersF, CoeffsF, PowersG, CoeffsG)
+resultantCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_resultantCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 

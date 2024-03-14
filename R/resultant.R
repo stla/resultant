@@ -1,11 +1,14 @@
 #' @title Resultant of two polynomials
 #' @description Resultant of two polynomials with rational coefficients.
 #'
-#' @param qspray1,qspray2 two \code{qspray} polynomials with at more two
+#' @param qspray1,qspray2 two \code{qspray} polynomials with at more three
 #'   variables
 #'
 #' @return For univariate polynomials, this returns a fraction given as a
-#'   string. For bivariate polynomials, this returns a univariate
+#'   string.
+#'   For bivariate polynomials, this returns a univariate
+#'   \code{qspray} polynomial.
+#'   For trivariate polynomials, this returns a bivariate
 #'   \code{qspray} polynomial.
 #' @export
 #' @importFrom qspray qsprayMaker
@@ -18,15 +21,19 @@
 #' f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4
 #' g <- x - 2*y^2
 #' resultant(f, g)
-resultant <- function(qspray1, qspray2) {
+resultant <- function(qspray1, qspray2, var = 1) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
   n <- max(n1, n2)
   if(n == 0L) {
     stop("The two polynomials are constant.")
   }
-  if(n >= 3L) {
+  if(n >= 4L) {
     stop("The implementation only allows univariate and bivariate polynomials.")
+  }
+  stopifnot(isPositiveInteger(var))
+  if(var > n) {
+    stop("Too large value of `var`.")
   }
   coeffs1 <- qspray1@coeffs
   coeffs2 <- qspray2@coeffs
@@ -45,12 +52,22 @@ resultant <- function(qspray1, qspray2) {
       pows1, coeffs1,
       pows2, coeffs2
     )
-  } else {
+  } else if(n == 2L){
     coeffs <- resultantCPP2(
       pows1, coeffs1,
       pows2, coeffs2
     )
     d <- length(coeffs) - 1L
     qsprayMaker(powers = as.list(0L:d), coeffs = coeffs)
+  } else if(n == 3L) {
+    R <- resultantCPP3(
+      pows1, coeffs1,
+      pows2, coeffs2,
+      makePermutation(3L, var) - 1L
+    )
+    qsprayMaker(
+      powers = apply(R[["Powers"]], 2L, identity, simplify = FALSE),
+      coeffs = R[["Coeffs"]]
+    )
   }
 }
