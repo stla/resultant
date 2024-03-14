@@ -1,4 +1,23 @@
-resulant <- function(qspray1, qspray2) {
+#' @title Resultant of two polynomials
+#' @description Resultant of two polynomials with rational coefficients.
+#'
+#' @param qspray1,qspray2 two \code{qspray} polynomials with at more two
+#'   variables
+#'
+#' @return For univariate polynomials, this returns a fraction given as a
+#'   string. For bivariate polynomials, this returns a univariate
+#'   \code{qspray} polynomial.
+#' @export
+#'
+#' @examples
+#' library(resultant)
+#' library(qspray)
+#' x <- qlone(1)
+#' y <- qlone(2)
+#' f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4
+#' g <- x - 2*y^2
+#' resultant(f, g)
+resultant <- function(qspray1, qspray2) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
   n <- max(n1, n2)
