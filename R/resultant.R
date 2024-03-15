@@ -23,9 +23,9 @@
 #' f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4
 #' g <- x - 2*y^2
 #' Rx <- resultant(f, g, var = 1)
-#' prettyQspray(Rx, "x")
+#' prettyQspray(Rx, "y")
 #' Ry <- resultant(f, g, var = 2)
-#' prettyQspray(Ry, "y")
+#' prettyQspray(Ry, "x")
 resultant <- function(qspray1, qspray2, var = 1) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
@@ -35,7 +35,7 @@ resultant <- function(qspray1, qspray2, var = 1) {
   }
   if(n >= 4L) {
     stop(
-      "The implementation only allows polynomials with at more three variables."
+      "Only polynomials with at more three variables are allowed."
     )
   }
   stopifnot(isPositiveInteger(var))

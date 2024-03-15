@@ -32,7 +32,7 @@ y <- qlone(2)
 f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4
 g <- x - 2*y^2
 Rx <- resultant(f, g, var = 1)
-prettyQspray(Rx, "x")
+prettyQspray(Rx, "y")
 Ry <- resultant(f, g, var = 2)
-prettyQspray(Ry, "y")
+prettyQspray(Ry, "x")
 }
