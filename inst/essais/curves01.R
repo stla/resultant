@@ -33,10 +33,13 @@ contourData <- function(cr) {
 datf <- contourData(crf)
 datg <- contourData(crg)
 
+datPoints <- data.frame("x" = c(-0.5, 0, 0.5), "y" = c(0.5, 0, 0.5))
+
 library(ggplot2)
 ggplot() +
   geom_path(aes(x, y), data = datf, linewidth = 1, color = "blue") +
-  geom_path(aes(x, y), data = datg, linewidth = 1, color = "green")
+  geom_path(aes(x, y), data = datg, linewidth = 1, color = "green") +
+  geom_point(aes(x, y), data = datPoints, size = 2)
 
 ###
 # define the two polynomials
@@ -45,7 +48,7 @@ x <- qlone(1)
 y <- qlone(2)
 p <- f(x, y)
 q <- g(x, y)
-
+# compute their resultant with respect to x
 Rx <- resultant::resultant(p, q, var = 1) # var=1 <=> var="x"
 prettyQspray(Rx, vars = "x")
 #coeffs <- sapply(0:8, function(k) gmp::asNumeric(getCoefficient(R, k)))

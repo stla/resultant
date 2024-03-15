@@ -7,3 +7,15 @@
 <!-- badges: end -->
 
 ___
+
+See [this blog post](https://laustep.github.io/stlahblog/posts/resultant-algebraicCurves.html) for an illustration.
+
+___
+
+## License
+
+This package is provided under the GPL-3 license but it uses the C++ library 
+[CGAL](https://www.cgal.org/) which requires a license from the 
+[GeometryFactory](https://geometryfactory.com) if you wish to use it for 
+commercial purposes.
+

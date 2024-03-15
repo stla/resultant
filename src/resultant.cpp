@@ -95,7 +95,7 @@ Rcpp::CharacterVector resultantCPP2(
     Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
     bool permute
 ) {
-  CGAL::IO::set_pretty_mode(std::cout);
+  //CGAL::IO::set_pretty_mode(std::cout);
 
   Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
   Poly2 G = makePolyX<Poly2, PT2, Monomial2>(PowersG, CoeffsG);
@@ -105,7 +105,7 @@ Rcpp::CharacterVector resultantCPP2(
     G = swap(G, 0, 1);
   }
   PT2::Resultant resultant;
-  std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;
+  //std::cout << "The resultant of F and G is: " << resultant(F, G) << std::endl;
   Poly1 R = resultant(F, G);
   PT1::Degree degree;
   int d = degree(R);
