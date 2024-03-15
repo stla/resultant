@@ -13,3 +13,7 @@ resultantCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
     .Call(`_resultant_resultantCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
+numberOfRealRootsCPP <- function(Powers, Coeffs) {
+    .Call(`_resultant_numberOfRealRootsCPP`, Powers, Coeffs)
+}
+

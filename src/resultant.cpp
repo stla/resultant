@@ -135,3 +135,11 @@ Rcpp::List resultantCPP3(
   Poly2 R = resultant(F, G);
   return getPolynomial<Poly2, PT2, Monomial2>(R, 2);
 }
+
+// [[Rcpp::export]]
+int numberOfRealRootsCPP(
+  Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs
+) {
+  Poly1 P = makePoly1(Powers, Coeffs);
+  return CGAL::number_of_real_roots(P);
+}

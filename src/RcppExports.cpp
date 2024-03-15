@@ -55,11 +55,24 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// numberOfRealRootsCPP
+int numberOfRealRootsCPP(Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_numberOfRealRootsCPP(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(numberOfRealRootsCPP(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
     {"_resultant_resultantCPP2", (DL_FUNC) &_resultant_resultantCPP2, 5},
     {"_resultant_resultantCPP3", (DL_FUNC) &_resultant_resultantCPP3, 5},
+    {"_resultant_numberOfRealRootsCPP", (DL_FUNC) &_resultant_numberOfRealRootsCPP, 2},
     {NULL, NULL, 0}
 };
 
