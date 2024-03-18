@@ -5,8 +5,16 @@ resultantCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
     .Call(`_resultant_resultantCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
+subresultantsCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_subresultantsCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
+}
+
 resultantCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permute) {
     .Call(`_resultant_resultantCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, permute)
+}
+
+subresultantsCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_subresultantsCPP2`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
 resultantCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {

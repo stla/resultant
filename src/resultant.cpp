@@ -54,6 +54,25 @@ Rcpp::CharacterVector resultantCPP1(
 
 // -------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::CharacterVector subresultantsCPP1(
+  Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  Poly1 F = makePoly1(PowersF, CoeffsF);
+  Poly1 G = makePoly1(PowersG, CoeffsG);
+  std::vector<CGAL::Gmpq> subresultants;
+  CGAL::principal_subresultants(F, G, std::back_inserter(subresultants));
+  int n = subresultants.size();
+  Rcpp::CharacterVector out(n);
+  for(int i = 0; i < n ; i++) {
+    out(i) = q2str(subresultants[i]);
+  }
+  return out;
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
 template <typename PolyX, typename PTX, typename MonomialX>
 PolyX makePolyX(
   Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
@@ -123,6 +142,25 @@ Rcpp::CharacterVector resultantCPP2(
     Coeffs(i) = q2str(getCoefficient(R, i));
   }
   return Coeffs;
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List subresultantsCPP2(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
+  Poly2 G = makePolyX<Poly2, PT2, Monomial2>(PowersG, CoeffsG);
+  std::vector<Poly1> subresultants;
+  CGAL::principal_subresultants(F, G, std::back_inserter(subresultants));
+  int n = subresultants.size();
+  Rcpp::List out(n);
+  for(int i = 0; i < n ; i++) {
+    out(i) = getPolynomial<Poly1, PT1, Monomial1>(subresultants[i], 1);
+  }
+  return out;
 }
 
 // -------------------------------------------------------------------------- //

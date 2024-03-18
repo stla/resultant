@@ -119,6 +119,53 @@ resultant <- function(qspray1, qspray2, var = 1) {
   }
 }
 
+subresultants <- function(qspray1, qspray2, var = 1) {
+  n1 <- nvariables(qspray1)
+  n2 <- nvariables(qspray2)
+  n <- max(n1, n2)
+  if(n == 0L) {
+    stop("The two polynomials are constant.")
+  }
+  if(n >= 10L) {
+    stop(
+      "Only polynomials with at more nine variables are allowed."
+    )
+  }
+  stopifnot(isPositiveInteger(var))
+  if(var > n) {
+    stop("Too large value of `var`.")
+  }
+  coeffs1 <- qspray1@coeffs
+  coeffs2 <- qspray2@coeffs
+  pows1 <- vapply(qspray1@powers, function(pwrs) {
+    out <- integer(n)
+    out[seq_along(pwrs)] <- pwrs
+    out
+  }, integer(n))
+  pows2 <- vapply(qspray2@powers, function(pwrs) {
+    out <- integer(n)
+    out[seq_along(pwrs)] <- pwrs
+    out
+  }, integer(n))
+  if(n == 1L) {
+    subresultantsCPP1(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 2L) {
+    subres <- subresultantsCPP2(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+    lapply(subres, function(S) {
+      qsprayMaker(
+        powers = apply(S[["Powers"]], 2L, identity, simplify = FALSE),
+        coeffs = S[["Coeffs"]]
+      )
+    })
+  }
+}
+
 #' @title Number of real roots
 #' @description Number of distinct real roots of a univariate polynomial.
 #'
