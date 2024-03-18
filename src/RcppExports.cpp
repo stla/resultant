@@ -55,8 +55,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // subresultantsCPP2
-Rcpp::List subresultantsCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_subresultantsCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List subresultantsCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool permute);
+RcppExport SEXP _resultant_subresultantsCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permuteSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -64,7 +64,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(subresultantsCPP2(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type permute(permuteSEXP);
+    rcpp_result_gen = Rcpp::wrap(subresultantsCPP2(PowersF, CoeffsF, PowersG, CoeffsG, permute));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -190,7 +191,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
     {"_resultant_subresultantsCPP1", (DL_FUNC) &_resultant_subresultantsCPP1, 4},
     {"_resultant_resultantCPP2", (DL_FUNC) &_resultant_resultantCPP2, 5},
-    {"_resultant_subresultantsCPP2", (DL_FUNC) &_resultant_subresultantsCPP2, 4},
+    {"_resultant_subresultantsCPP2", (DL_FUNC) &_resultant_subresultantsCPP2, 5},
     {"_resultant_resultantCPP3", (DL_FUNC) &_resultant_resultantCPP3, 5},
     {"_resultant_resultantCPP4", (DL_FUNC) &_resultant_resultantCPP4, 5},
     {"_resultant_resultantCPP5", (DL_FUNC) &_resultant_resultantCPP5, 5},

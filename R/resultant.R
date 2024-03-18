@@ -119,6 +119,32 @@ resultant <- function(qspray1, qspray2, var = 1) {
   }
 }
 
+#' @title Subresultants of two polynomials
+#' @description Subresultants of two polynomials with rational coefficients.
+#'
+#' @param qspray1,qspray2 two \code{qspray} polynomials with at more two
+#'   variables
+#' @param var integer indicating with respect to which variable the resultant
+#'   is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})
+#'
+#' @return For univariate polynomials, this returns a vector of fractions
+#'   given as strings.
+#'   For bivariate polynomials, this returns a list of univariate
+#'   \code{qspray} polynomials.
+#' @export
+#' @importFrom qspray qsprayMaker
+#'
+#' @examples
+#' library(resultant)
+#' library(qspray)
+#' x <- qlone(1)
+#' y <- qlone(2)
+#' p <- x^2 * y * (y^2 - 5*x + 6)
+#' q <- x^2 * y * (3*y + 2)
+#' SRx <- subresultants(p, q, var = 1) # should be 0, 0, non-zero, ...
+#' # lapply(SRx, function(s) prettyQspray(s, "y"))
+#' SRy <- subresultants(p, q, var = 2) # should be 0, non-zero, ...
+#' # lapply(SRy, function(s) prettyQspray(s, "x"))
 subresultants <- function(qspray1, qspray2, var = 1) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
@@ -126,9 +152,9 @@ subresultants <- function(qspray1, qspray2, var = 1) {
   if(n == 0L) {
     stop("The two polynomials are constant.")
   }
-  if(n >= 10L) {
+  if(n >= 3L) {
     stop(
-      "Only polynomials with at more nine variables are allowed."
+      "Only polynomials with at more two variables are allowed."
     )
   }
   stopifnot(isPositiveInteger(var))
@@ -155,7 +181,8 @@ subresultants <- function(qspray1, qspray2, var = 1) {
   } else if(n == 2L) {
     subres <- subresultantsCPP2(
       pows1, coeffs1,
-      pows2, coeffs2
+      pows2, coeffs2,
+      var == 1
     )
     lapply(subres, function(S) {
       qsprayMaker(

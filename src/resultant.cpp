@@ -149,10 +149,16 @@ Rcpp::CharacterVector resultantCPP2(
 // [[Rcpp::export]]
 Rcpp::List subresultantsCPP2(
   Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
-  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool permute
 ) {
   Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
   Poly2 G = makePolyX<Poly2, PT2, Monomial2>(PowersG, CoeffsG);
+  if(permute) {
+    PT2::Swap swap;
+    F = swap(F, 0, 1);
+    G = swap(G, 0, 1);
+  }
   std::vector<Poly1> subresultants;
   CGAL::principal_subresultants(F, G, std::back_inserter(subresultants));
   int n = subresultants.size();

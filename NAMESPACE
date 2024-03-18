@@ -2,6 +2,7 @@
 
 export(numberOfRealRoots)
 export(resultant)
+export(subresultants)
 importFrom(Rcpp,evalCpp)
 importFrom(qspray,qsprayMaker)
 useDynLib(resultant, .registration=TRUE)
