@@ -55,6 +55,96 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// resultantCPP4
+Rcpp::List resultantCPP4(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_resultantCPP4(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(resultantCPP4(PowersF, CoeffsF, PowersG, CoeffsG, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// resultantCPP5
+Rcpp::List resultantCPP5(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_resultantCPP5(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(resultantCPP5(PowersF, CoeffsF, PowersG, CoeffsG, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// resultantCPP6
+Rcpp::List resultantCPP6(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_resultantCPP6(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(resultantCPP6(PowersF, CoeffsF, PowersG, CoeffsG, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// resultantCPP7
+Rcpp::List resultantCPP7(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_resultantCPP7(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(resultantCPP7(PowersF, CoeffsF, PowersG, CoeffsG, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// resultantCPP8
+Rcpp::List resultantCPP8(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_resultantCPP8(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(resultantCPP8(PowersF, CoeffsF, PowersG, CoeffsG, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// resultantCPP9
+Rcpp::List resultantCPP9(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_resultantCPP9(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(resultantCPP9(PowersF, CoeffsF, PowersG, CoeffsG, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
 // numberOfRealRootsCPP
 int numberOfRealRootsCPP(Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs);
 RcppExport SEXP _resultant_numberOfRealRootsCPP(SEXP PowersSEXP, SEXP CoeffsSEXP) {
@@ -72,6 +162,12 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
     {"_resultant_resultantCPP2", (DL_FUNC) &_resultant_resultantCPP2, 5},
     {"_resultant_resultantCPP3", (DL_FUNC) &_resultant_resultantCPP3, 5},
+    {"_resultant_resultantCPP4", (DL_FUNC) &_resultant_resultantCPP4, 5},
+    {"_resultant_resultantCPP5", (DL_FUNC) &_resultant_resultantCPP5, 5},
+    {"_resultant_resultantCPP6", (DL_FUNC) &_resultant_resultantCPP6, 5},
+    {"_resultant_resultantCPP7", (DL_FUNC) &_resultant_resultantCPP7, 5},
+    {"_resultant_resultantCPP8", (DL_FUNC) &_resultant_resultantCPP8, 5},
+    {"_resultant_resultantCPP9", (DL_FUNC) &_resultant_resultantCPP9, 5},
     {"_resultant_numberOfRealRootsCPP", (DL_FUNC) &_resultant_numberOfRealRootsCPP, 2},
     {NULL, NULL, 0}
 };

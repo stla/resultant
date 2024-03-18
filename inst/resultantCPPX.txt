@@ -1,0 +1,18 @@
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List resultantCPP%d(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+    Rcpp::IntegerVector permutation
+) {
+  Poly%d F = makePolyX<Poly%d, PT%d, Monomial%d>(PowersF, CoeffsF);
+  Poly%d G = makePolyX<Poly%d, PT%d, Monomial%d>(PowersG, CoeffsG);
+  PT%d::Permute permute;
+  F = permute(F, permutation.begin(), permutation.end());
+  G = permute(G, permutation.begin(), permutation.end());
+  PT%d::Resultant resultant;
+  Poly%d R = resultant(F, G);
+  return getPolynomial<Poly%d, PT%d, Monomial%d>(R, %d);
+}
+

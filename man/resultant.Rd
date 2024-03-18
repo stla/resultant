@@ -7,7 +7,7 @@
 resultant(qspray1, qspray2, var = 1)
 }
 \arguments{
-\item{qspray1, qspray2}{two \code{qspray} polynomials with at more three
+\item{qspray1, qspray2}{two \code{qspray} polynomials with at more nine
 variables}
 
 \item{var}{integer indicating with respect to which variable the resultant
@@ -19,7 +19,7 @@ For univariate polynomials, this returns a fraction given as a
   For bivariate polynomials, this returns a univariate
   \code{qspray} polynomial.
   For trivariate polynomials, this returns a bivariate
-  \code{qspray} polynomial.
+  \code{qspray} polynomial. And so on.
 }
 \description{
 Resultant of two polynomials with rational coefficients.

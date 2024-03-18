@@ -1,0 +1,3 @@
+typedef CGAL::Polynomial_type_generator<CGAL::Gmpq, %d>::Type Poly%d;
+typedef CGAL::Polynomial_traits_d<Poly%d>                     PT%d;
+typedef std::pair<CGAL::Exponent_vector, PT%d::Innermost_coefficient_type> Monomial%d;

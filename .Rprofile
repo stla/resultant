@@ -1,6 +1,6 @@
 dllunload <- function(){
   dyn.unload(
-    system.file("libs", "x64", "resultant.dll", package = "Apollonius")
+    system.file("libs", "x64", "resultant.dll", package = "resultant")
   )
 }
 

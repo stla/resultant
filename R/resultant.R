@@ -1,7 +1,7 @@
 #' @title Resultant of two polynomials
 #' @description Resultant of two polynomials with rational coefficients.
 #'
-#' @param qspray1,qspray2 two \code{qspray} polynomials with at more three
+#' @param qspray1,qspray2 two \code{qspray} polynomials with at more nine
 #'   variables
 #' @param var integer indicating with respect to which variable the resultant
 #'   is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})
@@ -11,7 +11,7 @@
 #'   For bivariate polynomials, this returns a univariate
 #'   \code{qspray} polynomial.
 #'   For trivariate polynomials, this returns a bivariate
-#'   \code{qspray} polynomial.
+#'   \code{qspray} polynomial. And so on.
 #' @export
 #' @importFrom qspray qsprayMaker
 #'
@@ -33,9 +33,9 @@ resultant <- function(qspray1, qspray2, var = 1) {
   if(n == 0L) {
     stop("The two polynomials are constant.")
   }
-  if(n >= 4L) {
+  if(n >= 10L) {
     stop(
-      "Only polynomials with at more three variables are allowed."
+      "Only polynomials with at more nine variables are allowed."
     )
   }
   stopifnot(isPositiveInteger(var))
@@ -67,12 +67,51 @@ resultant <- function(qspray1, qspray2, var = 1) {
     )
     d <- length(coeffs) - 1L
     qsprayMaker(powers = as.list(0L:d), coeffs = coeffs)
-  } else if(n == 3L) {
-    R <- resultantCPP3(
-      pows1, coeffs1,
-      pows2, coeffs2,
-      makePermutation(3L, var)
-    )
+  } else {
+    permutation <- makePermutation(n, var)
+    if(n == 3L) {
+      R <- resultantCPP3(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    } else if(n == 4L) {
+      R <- resultantCPP4(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    } else if(n == 5L) {
+      R <- resultantCPP5(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    } else if(n == 6L) {
+      R <- resultantCPP6(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    } else if(n == 7L) {
+      R <- resultantCPP7(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    } else if(n == 8L) {
+      R <- resultantCPP8(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    } else if(n == 9L) {
+      R <- resultantCPP9(
+        pows1, coeffs1,
+        pows2, coeffs2,
+        permutation
+      )
+    }
     qsprayMaker(
       powers = apply(R[["Powers"]], 2L, identity, simplify = FALSE),
       coeffs = R[["Coeffs"]]
