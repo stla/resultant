@@ -29,10 +29,10 @@
 resultant <- function(qspray1, qspray2, var = 1) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
-  n <- max(n1, n2)
-  if(n == 0L) {
-    stop("The two polynomials are constant.")
-  }
+  n <- max(1L, n1, n2)
+  # if(n == 0L) {
+  #   stop("The two polynomials are constant.")
+  # }
   if(n >= 10L) {
     stop(
       "Only polynomials with at more nine variables are allowed."
@@ -148,10 +148,10 @@ resultant <- function(qspray1, qspray2, var = 1) {
 subresultants <- function(qspray1, qspray2, var = 1) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
-  n <- max(n1, n2)
-  if(n == 0L) {
-    stop("The two polynomials are constant.")
-  }
+  n <- max(1L, n1, n2)
+  # if(n == 0L) {
+  #   stop("The two polynomials are constant.")
+  # }
   if(n >= 3L) {
     stop(
       "Only polynomials with at more two variables are allowed."
