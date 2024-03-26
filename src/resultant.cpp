@@ -295,6 +295,36 @@ Rcpp::List resultantCPP9(
   return getPolynomial<Poly8, PT8, Monomial8>(R, 8);
 }
 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP1(
+    Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  Poly1 F = makePoly1(PowersF, CoeffsF);
+  Poly1 G = makePoly1(PowersG, CoeffsG);
+  PT1::Gcd gcd;
+  Poly1 D = gcd(F, G);
+  return getPolynomial<Poly1, PT1, Monomial1>(D, 1);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP2(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
+  Poly2 G = makePolyX<Poly2, PT2, Monomial2>(PowersG, CoeffsG);
+  PT2::Gcd gcd;
+  Poly2 D = gcd(F, G);
+  return getPolynomial<Poly2, PT2, Monomial2>(D, 2);
+}
+
+
 // -------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------- //
 // [[Rcpp::export]]

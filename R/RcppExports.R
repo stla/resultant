@@ -45,6 +45,14 @@ resultantCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
     .Call(`_resultant_resultantCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
+gcdCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_gcdCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
+}
+
+gcdCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_gcdCPP2`, PowersF, CoeffsF, PowersG, CoeffsG)
+}
+
 numberOfRealRootsCPP <- function(Powers, Coeffs) {
     .Call(`_resultant_numberOfRealRootsCPP`, Powers, Coeffs)
 }

@@ -174,6 +174,34 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// gcdCPP1
+Rcpp::List gcdCPP1(Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG);
+RcppExport SEXP _resultant_gcdCPP1(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP1(PowersF, CoeffsF, PowersG, CoeffsG));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gcdCPP2
+Rcpp::List gcdCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
+RcppExport SEXP _resultant_gcdCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP2(PowersF, CoeffsF, PowersG, CoeffsG));
+    return rcpp_result_gen;
+END_RCPP
+}
 // numberOfRealRootsCPP
 int numberOfRealRootsCPP(Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs);
 RcppExport SEXP _resultant_numberOfRealRootsCPP(SEXP PowersSEXP, SEXP CoeffsSEXP) {
@@ -199,6 +227,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP7", (DL_FUNC) &_resultant_resultantCPP7, 5},
     {"_resultant_resultantCPP8", (DL_FUNC) &_resultant_resultantCPP8, 5},
     {"_resultant_resultantCPP9", (DL_FUNC) &_resultant_resultantCPP9, 5},
+    {"_resultant_gcdCPP1", (DL_FUNC) &_resultant_gcdCPP1, 4},
+    {"_resultant_gcdCPP2", (DL_FUNC) &_resultant_gcdCPP2, 4},
     {"_resultant_numberOfRealRootsCPP", (DL_FUNC) &_resultant_numberOfRealRootsCPP, 2},
     {NULL, NULL, 0}
 };
