@@ -1,0 +1,10 @@
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP%d(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly%d, PT%d, Monomial%d, %d>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+

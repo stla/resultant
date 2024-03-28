@@ -2,7 +2,7 @@
 #' @description Greatest common divisor of two polynomials with rational
 #'   coefficients.
 #'
-#' @param qspray1,qspray2 two \code{qspray} polynomials with at more two
+#' @param qspray1,qspray2 two \code{qspray} polynomials with at more nine
 #'   variables
 #'
 #' @return A \code{qspray} polynomial.
@@ -23,9 +23,9 @@ gcd <- function(qspray1, qspray2) {
   n1 <- nvariables(qspray1)
   n2 <- nvariables(qspray2)
   n <- max(1L, n1, n2)
-  if(n >= 3L) {
+  if(n >= 10L) {
     stop(
-      "Only polynomials with at more two variables are allowed."
+      "Only polynomials with at more nine variables are allowed."
     )
   }
   coeffs1 <- qspray1@coeffs
@@ -47,6 +47,41 @@ gcd <- function(qspray1, qspray2) {
     )
   } else if(n == 2L) {
     D <- gcdCPP2(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 3L) {
+    D <- gcdCPP3(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 4L) {
+    D <- gcdCPP4(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 5L) {
+    D <- gcdCPP5(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 6L) {
+    D <- gcdCPP6(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 7L) {
+    D <- gcdCPP7(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 8L) {
+    D <- gcdCPP8(
+      pows1, coeffs1,
+      pows2, coeffs2
+    )
+  } else if(n == 9L) {
+    D <- gcdCPP9(
       pows1, coeffs1,
       pows2, coeffs2
     )

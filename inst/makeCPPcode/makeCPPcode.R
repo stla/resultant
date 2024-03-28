@@ -15,3 +15,13 @@ resultant.hX <- function(X) {
 
 code <-vapply(4:9, resultant.hX, character(1L))
 writeLines(code, "resultantX.h")
+
+#
+gcdCPPX <- function(X) {
+  lines <- readLines("gcdCPPX.txt")
+  codeX <- paste0(lines, collapse = "\n")
+  sprintf(codeX, X, X, X, X, X)
+}
+
+code <- vapply(4:9, gcdCPPX, character(1L))
+writeLines(code, "gcdCPPX.cpp")

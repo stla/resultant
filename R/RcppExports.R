@@ -49,6 +49,10 @@ gcdCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
     .Call(`_resultant_gcdCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
+gcdCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_gcdCPP3`, PowersF, CoeffsF, PowersG, CoeffsG)
+}
+
 gcdCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
     .Call(`_resultant_gcdCPP2`, PowersF, CoeffsF, PowersG, CoeffsG)
 }

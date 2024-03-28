@@ -310,6 +310,18 @@ Rcpp::List gcdCPP1(
   return getPolynomial<Poly1, PT1, Monomial1>(D, 1);
 }
 
+template <typename PolyX, typename PTX, typename MonomialX, int X>
+Rcpp::List gcdCPPX(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  PolyX F = makePolyX<PolyX, PTX, MonomialX>(PowersF, CoeffsF);
+  PolyX G = makePolyX<PolyX, PTX, MonomialX>(PowersG, CoeffsG);
+  typename PTX::Gcd gcd;
+  PolyX D = gcd(F, G);
+  return getPolynomial<PolyX, PTX, MonomialX>(D, X);
+}
+
 // -------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------- //
 // [[Rcpp::export]]
@@ -317,11 +329,77 @@ Rcpp::List gcdCPP2(
     Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
     Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
 ) {
-  Poly2 F = makePolyX<Poly2, PT2, Monomial2>(PowersF, CoeffsF);
-  Poly2 G = makePolyX<Poly2, PT2, Monomial2>(PowersG, CoeffsG);
-  PT2::Gcd gcd;
-  Poly2 D = gcd(F, G);
-  return getPolynomial<Poly2, PT2, Monomial2>(D, 2);
+  return gcdCPPX<Poly2, PT2, Monomial2, 2>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP3(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly3, PT3, Monomial3, 3>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP4(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly4, PT4, Monomial4, 4>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP5(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly5, PT5, Monomial5, 5>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP6(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly6, PT6, Monomial6, 6>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP7(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly7, PT7, Monomial7, 7>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP8(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly8, PT8, Monomial8, 8>(PowersF, CoeffsF, PowersG, CoeffsG);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List gcdCPP9(
+    Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+    Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  return gcdCPPX<Poly9, PT9, Monomial9, 9>(PowersF, CoeffsF, PowersG, CoeffsG);
 }
 
 
