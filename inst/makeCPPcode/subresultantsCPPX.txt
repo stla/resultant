@@ -1,0 +1,13 @@
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List subresultantsCPP%d(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  Rcpp::IntegerVector permutation
+) {
+  return subresultantsCPPX<Poly%d, PT%d, Monomial%d, Poly%d, PT%d, Monomial%d, %d>(
+    PowersF, CoeffsF, PowersG, CoeffsG, permutation
+  );
+}
+

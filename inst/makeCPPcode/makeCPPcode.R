@@ -25,3 +25,13 @@ gcdCPPX <- function(X) {
 
 code <- vapply(4:9, gcdCPPX, character(1L))
 writeLines(code, "gcdCPPX.cpp")
+
+#
+subresultantsCPPX <- function(X) {
+  lines <- readLines("subresultantsCPPX.txt")
+  codeX <- paste0(lines, collapse = "\n")
+  sprintf(codeX, X, X, X, X, X-1, X-1, X-1, X-1)
+}
+
+code <- vapply(4:9, subresultantsCPPX, character(1L))
+writeLines(code, "subresultantsCPPX.cpp")

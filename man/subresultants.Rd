@@ -7,7 +7,7 @@
 subresultants(qspray1, qspray2, var = 1)
 }
 \arguments{
-\item{qspray1, qspray2}{two \code{qspray} polynomials with at more two
+\item{qspray1, qspray2}{two \code{qspray} polynomials with at more nine
 variables}
 
 \item{var}{integer indicating with respect to which variable the resultant
@@ -17,7 +17,7 @@ is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})}
 For univariate polynomials, this returns a vector of fractions
   given as strings.
   For bivariate polynomials, this returns a list of univariate
-  \code{qspray} polynomials.
+  \code{qspray} polynomials. And so on.
 }
 \description{
 Subresultants of two polynomials with rational coefficients.

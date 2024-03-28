@@ -7,7 +7,7 @@
 gcd(qspray1, qspray2)
 }
 \arguments{
-\item{qspray1, qspray2}{two \code{qspray} polynomials with at more two
+\item{qspray1, qspray2}{two \code{qspray} polynomials with at more nine
 variables}
 }
 \value{
