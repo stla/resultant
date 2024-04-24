@@ -73,40 +73,40 @@ subresultantsCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
     .Call(`_resultant_subresultantsCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-gcdCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP1`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP2`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP3`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP4 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP4`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP4 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP4`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP5 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP5`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP5 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP5`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP6 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP6`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP6 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP6`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP7 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP7`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP7 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP7`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP8 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP8`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP8 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP8`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
-gcdCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_gcdCPP9`, PowersF, CoeffsF, PowersG, CoeffsG)
+gcdCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {
+    .Call(`_resultant_gcdCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, UTCF)
 }
 
 numberOfRealRootsCPP <- function(Powers, Coeffs) {

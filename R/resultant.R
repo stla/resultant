@@ -13,7 +13,7 @@
 #'   For trivariate polynomials, this returns a bivariate
 #'   \code{qspray} polynomial. And so on.
 #' @export
-#' @importFrom qspray qsprayMaker
+#' @importFrom qspray qsprayMaker numberOfVariables
 #'
 #' @examples
 #' library(resultant)
@@ -27,8 +27,8 @@
 #' Ry <- resultant(f, g, var = 2)
 #' prettyQspray(Ry, "x")
 resultant <- function(qspray1, qspray2, var = 1) {
-  n1 <- nvariables(qspray1)
-  n2 <- nvariables(qspray2)
+  n1 <- numberOfVariables(qspray1)
+  n2 <- numberOfVariables(qspray2)
   n <- max(1L, n1, n2)
   # if(n == 0L) {
   #   stop("The two polynomials are constant.")

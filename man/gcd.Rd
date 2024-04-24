@@ -4,11 +4,14 @@
 \alias{gcd}
 \title{Greatest common divisor of two polynomials}
 \usage{
-gcd(qspray1, qspray2)
+gcd(qspray1, qspray2, utcf = FALSE)
 }
 \arguments{
 \item{qspray1, qspray2}{two \code{qspray} polynomials with at more nine
 variables}
+
+\item{utcf}{Boolean, whether to get the greatest common divisor up to a
+constant factor (this can be faster)}
 }
 \value{
 A \code{qspray} polynomial.

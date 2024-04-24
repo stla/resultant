@@ -5,6 +5,7 @@
 #'
 #' @return An integer, the number of real roots of the polynomial.
 #' @export
+#' @importFrom qspray numberOfVariables isQzero
 #'
 #' @examples
 #' library(resultant)
@@ -13,9 +14,9 @@
 #' P <- 2*x^4 + x^3 - 3*x^2 - x + 1
 #' numberOfRealRoots(P)
 numberOfRealRoots <- function(qspray) {
-  n <- nvariables(qspray)
+  n <- numberOfVariables(qspray)
   if(n == 0L) {
-    if(qspray == qzero()) {
+    if(isQzero(qspray)) {
       Inf
     } else {
       0L

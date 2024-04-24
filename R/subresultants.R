@@ -11,7 +11,7 @@
 #'   For bivariate polynomials, this returns a list of univariate
 #'   \code{qspray} polynomials. And so on.
 #' @export
-#' @importFrom qspray qsprayMaker
+#' @importFrom qspray qsprayMaker numberOfVariables
 #'
 #' @examples
 #' library(resultant)
@@ -25,8 +25,8 @@
 #' SRy <- subresultants(p, q, var = 2) # should be 0, non-zero, ...
 #' # lapply(SRy, function(s) prettyQspray(s, "x"))
 subresultants <- function(qspray1, qspray2, var = 1) {
-  n1 <- nvariables(qspray1)
-  n2 <- nvariables(qspray2)
+  n1 <- numberOfVariables(qspray1)
+  n2 <- numberOfVariables(qspray2)
   n <- max(1L, n1, n2)
   # if(n == 0L) {
   #   stop("The two polynomials are constant.")

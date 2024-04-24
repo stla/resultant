@@ -280,8 +280,8 @@ BEGIN_RCPP
 END_RCPP
 }
 // gcdCPP1
-Rcpp::List gcdCPP1(Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP1(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP1(Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP1(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -289,13 +289,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP1(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP1(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP2
-Rcpp::List gcdCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -303,13 +304,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP2(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP2(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP3
-Rcpp::List gcdCPP3(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP3(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP3(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP3(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -317,13 +319,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP3(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP3(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP4
-Rcpp::List gcdCPP4(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP4(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP4(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP4(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -331,13 +334,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP4(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP4(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP5
-Rcpp::List gcdCPP5(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP5(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP5(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP5(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -345,13 +349,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP5(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP5(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP6
-Rcpp::List gcdCPP6(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP6(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP6(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP6(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -359,13 +364,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP6(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP6(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP7
-Rcpp::List gcdCPP7(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP7(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP7(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP7(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -373,13 +379,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP7(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP7(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP8
-Rcpp::List gcdCPP8(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP8(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP8(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP8(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -387,13 +394,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP8(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP8(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
 // gcdCPP9
-Rcpp::List gcdCPP9(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG);
-RcppExport SEXP _resultant_gcdCPP9(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+Rcpp::List gcdCPP9(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool UTCF);
+RcppExport SEXP _resultant_gcdCPP9(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP UTCFSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -401,7 +409,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
     Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
-    rcpp_result_gen = Rcpp::wrap(gcdCPP9(PowersF, CoeffsF, PowersG, CoeffsG));
+    Rcpp::traits::input_parameter< bool >::type UTCF(UTCFSEXP);
+    rcpp_result_gen = Rcpp::wrap(gcdCPP9(PowersF, CoeffsF, PowersG, CoeffsG, UTCF));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -437,15 +446,15 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_subresultantsCPP7", (DL_FUNC) &_resultant_subresultantsCPP7, 5},
     {"_resultant_subresultantsCPP8", (DL_FUNC) &_resultant_subresultantsCPP8, 5},
     {"_resultant_subresultantsCPP9", (DL_FUNC) &_resultant_subresultantsCPP9, 5},
-    {"_resultant_gcdCPP1", (DL_FUNC) &_resultant_gcdCPP1, 4},
-    {"_resultant_gcdCPP2", (DL_FUNC) &_resultant_gcdCPP2, 4},
-    {"_resultant_gcdCPP3", (DL_FUNC) &_resultant_gcdCPP3, 4},
-    {"_resultant_gcdCPP4", (DL_FUNC) &_resultant_gcdCPP4, 4},
-    {"_resultant_gcdCPP5", (DL_FUNC) &_resultant_gcdCPP5, 4},
-    {"_resultant_gcdCPP6", (DL_FUNC) &_resultant_gcdCPP6, 4},
-    {"_resultant_gcdCPP7", (DL_FUNC) &_resultant_gcdCPP7, 4},
-    {"_resultant_gcdCPP8", (DL_FUNC) &_resultant_gcdCPP8, 4},
-    {"_resultant_gcdCPP9", (DL_FUNC) &_resultant_gcdCPP9, 4},
+    {"_resultant_gcdCPP1", (DL_FUNC) &_resultant_gcdCPP1, 5},
+    {"_resultant_gcdCPP2", (DL_FUNC) &_resultant_gcdCPP2, 5},
+    {"_resultant_gcdCPP3", (DL_FUNC) &_resultant_gcdCPP3, 5},
+    {"_resultant_gcdCPP4", (DL_FUNC) &_resultant_gcdCPP4, 5},
+    {"_resultant_gcdCPP5", (DL_FUNC) &_resultant_gcdCPP5, 5},
+    {"_resultant_gcdCPP6", (DL_FUNC) &_resultant_gcdCPP6, 5},
+    {"_resultant_gcdCPP7", (DL_FUNC) &_resultant_gcdCPP7, 5},
+    {"_resultant_gcdCPP8", (DL_FUNC) &_resultant_gcdCPP8, 5},
+    {"_resultant_gcdCPP9", (DL_FUNC) &_resultant_gcdCPP9, 5},
     {"_resultant_numberOfRealRootsCPP", (DL_FUNC) &_resultant_numberOfRealRootsCPP, 2},
     {NULL, NULL, 0}
 };

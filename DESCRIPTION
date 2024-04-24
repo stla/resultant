@@ -14,7 +14,7 @@ License: GPL-3
 URL: https://github.com/stla/resultant
 BugReports: https://github.com/stla/resultant/issues
 Imports: 
-    qspray,
+    qspray (>= 3.0.0),
     Rcpp
 Suggests: 
     testthat (>= 3.0.0)
@@ -26,4 +26,4 @@ LinkingTo:
 Config/testthat/edition: 3
 Encoding: UTF-8
 RoxygenNote: 7.3.1
-SystemRequirements: C++17, gmp, mpfr
+SystemRequirements: C++17, gmp
