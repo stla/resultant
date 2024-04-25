@@ -9,7 +9,6 @@
 #'
 #' @examples
 #' library(resultant)
-#' library(qspray)
 #' x <- qlone(1)
 #' P <- 2*x^4 + x^3 - 3*x^2 - x + 1
 #' numberOfRealRoots(P)
