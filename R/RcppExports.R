@@ -113,3 +113,11 @@ numberOfRealRootsCPP <- function(Powers, Coeffs) {
     .Call(`_resultant_numberOfRealRootsCPP`, Powers, Coeffs)
 }
 
+divModCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_divModCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
+}
+
+integralDivisionCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+

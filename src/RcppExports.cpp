@@ -426,6 +426,35 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// divModCPP1
+Rcpp::List divModCPP1(Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG);
+RcppExport SEXP _resultant_divModCPP1(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    rcpp_result_gen = Rcpp::wrap(divModCPP1(PowersF, CoeffsF, PowersG, CoeffsG));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP2
+Rcpp::List integralDivisionCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP2(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
@@ -456,6 +485,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_gcdCPP8", (DL_FUNC) &_resultant_gcdCPP8, 5},
     {"_resultant_gcdCPP9", (DL_FUNC) &_resultant_gcdCPP9, 5},
     {"_resultant_numberOfRealRootsCPP", (DL_FUNC) &_resultant_numberOfRealRootsCPP, 2},
+    {"_resultant_divModCPP1", (DL_FUNC) &_resultant_divModCPP1, 4},
+    {"_resultant_integralDivisionCPP2", (DL_FUNC) &_resultant_integralDivisionCPP2, 5},
     {NULL, NULL, 0}
 };
 

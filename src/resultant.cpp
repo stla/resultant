@@ -581,3 +581,85 @@ int numberOfRealRootsCPP(
   Poly1 P = makePoly1(Powers, Coeffs);
   return CGAL::number_of_real_roots(P);
 }
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+
+/* 
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+template 
+  <typename PolyX, typename PTX, typename MonomialX, int X>
+Rcpp::List divModCPPX(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  PolyX F = makePolyX<PolyX, PTX, MonomialX>(PowersF, CoeffsF);
+  PolyX G = makePolyX<PolyX, PTX, MonomialX>(PowersG, CoeffsG);
+  PolyX q; PolyX r;
+  CGAL::div_mod(F, G, q, r);
+  return Rcpp::List::create(
+    Rcpp::Named("Q") = getPolynomial<PolyX, PTX, MonomialX>(q, X),
+    Rcpp::Named("R") = getPolynomial<PolyX, PTX, MonomialX>(r, X)
+  );
+}
+*/
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List divModCPP1(
+  Rcpp::IntegerVector PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerVector PowersG, Rcpp::CharacterVector CoeffsG
+) {
+  Poly1 F = makePoly1(PowersF, CoeffsF);
+  Poly1 G = makePoly1(PowersG, CoeffsG);
+  Poly1 q; Poly1 r;
+  CGAL::div_mod(F, G, q, r);
+  return Rcpp::List::create(
+    Rcpp::Named("Q") = getPolynomial<Poly1, PT1, Monomial1>(q, 1),
+    Rcpp::Named("R") = getPolynomial<Poly1, PT1, Monomial1>(r, 1)
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+template 
+  <typename PolyX, typename PTX, typename MonomialX, int X>
+Rcpp::List integralDivisionCPPX(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  PolyX F = makePolyX<PolyX, PTX, MonomialX>(PowersF, CoeffsF);
+  PolyX G = makePolyX<PolyX, PTX, MonomialX>(PowersG, CoeffsG);
+  PolyX Q;
+  Rcpp::List out;
+  if(check) {
+    typename PTX::Divides divides;
+    bool d = divides(G, F, Q);
+    if(d) {
+      out = getPolynomial<PolyX, PTX, MonomialX>(Q, X);
+    }     
+  } else {
+    Q = CGAL::integral_division(F, G);
+    out = getPolynomial<PolyX, PTX, MonomialX>(Q, X);
+  }
+  return out;
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP2(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly2, PT2, Monomial2, 2>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 

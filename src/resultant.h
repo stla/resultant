@@ -13,6 +13,7 @@
 #include <CGAL/Polynomial_type_generator.h>
 #include <CGAL/polynomial_utils.h>
 #include <CGAL/Polynomial/Monomial_representation.h>
+#include <CGAL/number_utils.h>
 
 typedef CGAL::Polynomial_type_generator<CGAL::Gmpq, 1>::Type Poly1;
 typedef CGAL::Polynomial_traits_d<Poly1>                     PT1;
