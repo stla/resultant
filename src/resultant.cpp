@@ -654,12 +654,116 @@ Rcpp::List integralDivisionCPPX(
 // -------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------- //
 // [[Rcpp::export]]
+Rcpp::List integralDivisionCPP1(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly1, PT1, Monomial1, 1>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
 Rcpp::List integralDivisionCPP2(
   Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
   Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
   bool check
 ) {
   return integralDivisionCPPX<Poly2, PT2, Monomial2, 2>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP3(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly3, PT3, Monomial3, 3>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP4(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly4, PT4, Monomial4, 4>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP5(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly5, PT5, Monomial5, 5>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP6(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly6, PT6, Monomial6, 6>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP7(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly7, PT7, Monomial7, 7>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP8(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly8, PT8, Monomial8, 8>(
+    PowersF, CoeffsF, PowersG, CoeffsG, check
+  );
+} 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List integralDivisionCPP9(
+  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
+  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG,
+  bool check
+) {
+  return integralDivisionCPPX<Poly9, PT9, Monomial9, 9>(
     PowersF, CoeffsF, PowersG, CoeffsG, check
   );
 } 

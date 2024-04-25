@@ -9,8 +9,8 @@ q <- g * (y + x^3 + 2)
 
 G <- gcd(p, q)
 
-qspray1 <- G
-qspray2 <- p
+qspray1 <- q
+qspray2 <- G
 coeffs1 <- qspray1@coeffs
 coeffs2 <- qspray2@coeffs
 n <- 2L
@@ -27,7 +27,7 @@ pows2 <- vapply(qspray2@powers, function(pwrs) {
 
 
 Q <- resultant:::integralDivisionCPP2(
-  pows1, coeffs1, pows2, coeffs2, FALSE
+  pows1, coeffs1, pows2, coeffs2, TRUE
 )
 
 qsprayMaker(
