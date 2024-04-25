@@ -11,7 +11,7 @@
 #'   For bivariate polynomials, this returns a list of univariate
 #'   \code{qspray} polynomials. And so on.
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables isConstant
+#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables
 #'
 #' @examples
 #' library(resultant)

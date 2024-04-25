@@ -13,7 +13,7 @@
 #'   For trivariate polynomials, this returns a bivariate
 #'   \code{qspray} polynomial. And so on.
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables
+#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables swapVariables
 #'
 #' @examples
 #' library(resultant)
