@@ -11,19 +11,16 @@
 #'   For bivariate polynomials, this returns a list of univariate
 #'   \code{qspray} polynomials. And so on.
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables
+#' @importFrom qspray qsprayMaker numberOfVariables isConstant
 #'
 #' @examples
 #' library(resultant)
-#' library(qspray)
 #' x <- qlone(1)
 #' y <- qlone(2)
 #' p <- x^2 * y * (y^2 - 5*x + 6)
 #' q <- x^2 * y * (3*y + 2)
-#' SRx <- subresultants(p, q, var = 1) # should be 0, 0, non-zero, ...
-#' # lapply(SRx, function(s) prettyQspray(s, "y"))
-#' SRy <- subresultants(p, q, var = 2) # should be 0, non-zero, ...
-#' # lapply(SRy, function(s) prettyQspray(s, "x"))
+#' subresultants(p, q, var = 1) # should be 0, 0, non-zero, ...
+#' subresultants(p, q, var = 2) # should be 0, non-zero, ...
 subresultants <- function(qspray1, qspray2, var = 1) {
   n1 <- numberOfVariables(qspray1)
   n2 <- numberOfVariables(qspray2)
@@ -58,6 +55,8 @@ subresultants <- function(qspray1, qspray2, var = 1) {
       pows2, coeffs2
     )
   } else {
+    permutation <- makePermutation(n, var)
+    ipermutation <- inversePermutation(permutation) - 1L
     if(n == 2L) {
       subres <- subresultantsCPP2(
         pows1, coeffs1,
@@ -68,50 +67,51 @@ subresultants <- function(qspray1, qspray2, var = 1) {
       subres <- subresultantsCPP3(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     } else if(n == 4L) {
       subres <- subresultantsCPP4(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     } else if(n == 5L) {
       subres <- subresultantsCPP5(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     } else if(n == 6L) {
       subres <- subresultantsCPP6(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     } else if(n == 7L) {
       subres <- subresultantsCPP7(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     } else if(n == 8L) {
       subres <- subresultantsCPP8(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     } else if(n == 9L) {
       subres <- subresultantsCPP9(
         pows1, coeffs1,
         pows2, coeffs2,
-        makePermutation(n, var)
+        ipermutation
       )
     }
     lapply(subres, function(S) {
-      qsprayMaker(
-        powers = apply(S[["Powers"]], 2L, identity, simplify = FALSE),
+      qspray <- qsprayMaker(
+        powers = Columns(S[["Powers"]]),
         coeffs = S[["Coeffs"]]
       )
+      permuteVariables(qspray, permutation)
     })
   }
 }

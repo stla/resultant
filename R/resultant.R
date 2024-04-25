@@ -17,15 +17,12 @@
 #'
 #' @examples
 #' library(resultant)
-#' library(qspray)
 #' x <- qlone(1)
 #' y <- qlone(2)
 #' f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4
 #' g <- x - 2*y^2
-#' Rx <- resultant(f, g, var = 1)
-#' prettyQspray(Rx, "y")
-#' Ry <- resultant(f, g, var = 2)
-#' prettyQspray(Ry, "x")
+#' resultant(f, g, var = 1)
+#' resultant(f, g, var = 2)
 resultant <- function(qspray1, qspray2, var = 1) {
   n1 <- numberOfVariables(qspray1)
   n2 <- numberOfVariables(qspray2)
@@ -66,55 +63,62 @@ resultant <- function(qspray1, qspray2, var = 1) {
       var == 1L
     )
     d <- length(coeffs) - 1L
-    qsprayMaker(powers = as.list(0L:d), coeffs = coeffs)
+    qspray <- qsprayMaker(powers = as.list(0L:d), coeffs = coeffs)
+    if(var == 1L) {
+      swapVariables(qspray, 1L, 2L)
+    } else {
+      qspray
+    }
   } else {
     permutation <- makePermutation(n, var)
+    ipermutation <- inversePermutation(permutation) - 1L
     if(n == 3L) {
       R <- resultantCPP3(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     } else if(n == 4L) {
       R <- resultantCPP4(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     } else if(n == 5L) {
       R <- resultantCPP5(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     } else if(n == 6L) {
       R <- resultantCPP6(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     } else if(n == 7L) {
       R <- resultantCPP7(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     } else if(n == 8L) {
       R <- resultantCPP8(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     } else if(n == 9L) {
       R <- resultantCPP9(
         pows1, coeffs1,
         pows2, coeffs2,
-        permutation
+        ipermutation
       )
     }
-    qsprayMaker(
-      powers = apply(R[["Powers"]], 2L, identity, simplify = FALSE),
+    qspray <- qsprayMaker(
+      powers = Columns(R[["Powers"]]),
       coeffs = R[["Coeffs"]]
     )
+    permuteVariables(qspray, permutation)
   }
 }

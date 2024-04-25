@@ -24,13 +24,10 @@ Subresultants of two polynomials with rational coefficients.
 }
 \examples{
 library(resultant)
-library(qspray)
 x <- qlone(1)
 y <- qlone(2)
 p <- x^2 * y * (y^2 - 5*x + 6)
 q <- x^2 * y * (3*y + 2)
-SRx <- subresultants(p, q, var = 1) # should be 0, 0, non-zero, ...
-# lapply(SRx, function(s) prettyQspray(s, "y"))
-SRy <- subresultants(p, q, var = 2) # should be 0, non-zero, ...
-# lapply(SRy, function(s) prettyQspray(s, "x"))
+subresultants(p, q, var = 1) # should be 0, 0, non-zero, ...
+subresultants(p, q, var = 2) # should be 0, non-zero, ...
 }

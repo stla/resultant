@@ -1,5 +1,4 @@
 test_that("Bivariate example", {
-  library(qspray)
   x <- qlone(1)
   y <- qlone(2)
   f <- x^4 - x^3 + x^2 - 2*x*y^2 + y^4

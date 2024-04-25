@@ -14,7 +14,6 @@
 #'
 #' @examples
 #' library(resultant)
-#' library(qspray)
 #' x <- qlone(1)
 #' y <- qlone(2)
 #' g <- x^2 + 2*x*y + 1

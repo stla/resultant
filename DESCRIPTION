@@ -13,8 +13,10 @@ Description: Computation of the resultant, the subresultants, and the
 License: GPL-3
 URL: https://github.com/stla/resultant
 BugReports: https://github.com/stla/resultant/issues
-Imports: 
+Remotes: stla/qspray
+Depends:
     qspray (>= 3.0.0),
+Imports: 
     Rcpp
 Suggests: 
     testthat (>= 3.0.0)

@@ -1,5 +1,4 @@
 test_that("Trivariate example", {
-  library(qspray)
   x <- qlone(1)
   y <- qlone(2)
   z <- qlone(3)
