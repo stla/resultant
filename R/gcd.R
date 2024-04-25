@@ -97,7 +97,7 @@ gcd <- function(qspray1, qspray2, utcf = FALSE) {
     )
   }
   qsprayMaker(
-    powers = apply(D[["Powers"]], 2L, identity, simplify = FALSE),
+    powers = Columns(D[["Powers"]]),
     coeffs = D[["Coeffs"]]
   )
 }
