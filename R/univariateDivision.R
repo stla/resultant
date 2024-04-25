@@ -1,6 +1,6 @@
 #' @title Division of univariate polynomials
 #' @description Division with remainder of univariate polynomials with rational
-#'   coefficients;
+#'   coefficients.
 #'
 #' @param qspray1,qspray2 two univariate \code{qspray} polynomials
 #'
@@ -16,8 +16,8 @@
 #' qspray1 <- 2*x^4 + x^3 - 3*x^2 - x + 1
 #' qspray2 <- x^2 - 5*x + 10
 #' division <- univariateDivision(qspray1, qspray2)
-#' Q <- division[["Q"]]; R <- division[["R]]
-#' qspray1 = Q*qspray2 + R # should be TRUE
+#' Q <- division[["Q"]]; R <- division[["R"]]
+#' qspray1 == Q*qspray2 + R # should be TRUE
 univariateDivision <- function(qspray1, qspray2) {
   if(isUnivariate(qspray1) && isUnivariate(qspray2)) {
     if(isQzero(qspray2)) {
