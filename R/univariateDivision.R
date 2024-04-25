@@ -10,6 +10,9 @@
 #' @export
 #' @importFrom qspray isUnivariate isQzero
 #'
+#' @seealso \code{\link{integralDivision}},
+#'   \code{\link[qspray]{qsprayDivision}}.
+#'
 #' @examples
 #' library(resultant)
 #' x <- qlone(1)

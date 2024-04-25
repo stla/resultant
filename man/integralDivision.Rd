@@ -36,3 +36,7 @@ qspray1 <- q * (x^4 + y^2 + 2)
 qspray2 <- x^4 + y^2 + 2
 integralDivision(qspray1, qspray2) == q # should be TRUE
 }
+\seealso{
+\code{\link{univariateDivision}},
+  \code{\link[qspray]{qsprayDivision}}.
+}

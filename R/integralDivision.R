@@ -19,6 +19,9 @@
 #' @export
 #' @importFrom qspray qsprayMaker numberOfVariables
 #'
+#' @seealso \code{\link{univariateDivision}},
+#'   \code{\link[qspray]{qsprayDivision}}.
+#'
 #' @examples
 #' library(resultant)
 #' x <- qlone(1)

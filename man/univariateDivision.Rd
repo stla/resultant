@@ -16,7 +16,7 @@ A list of two univariate \code{qspray} polynomials, the quotient
 }
 \description{
 Division with remainder of univariate polynomials with rational
-  coefficients;
+  coefficients.
 }
 \examples{
 library(resultant)
@@ -25,5 +25,9 @@ qspray1 <- 2*x^4 + x^3 - 3*x^2 - x + 1
 qspray2 <- x^2 - 5*x + 10
 division <- univariateDivision(qspray1, qspray2)
 Q <- division[["Q"]]; R <- division[["R"]]
-qspray1 = Q*qspray2 + R # should be TRUE
+qspray1 == Q*qspray2 + R # should be TRUE
+}
+\seealso{
+\code{\link{integralDivision}},
+  \code{\link[qspray]{qsprayDivision}}.
 }
