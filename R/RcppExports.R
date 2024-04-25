@@ -117,7 +117,39 @@ divModCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
     .Call(`_resultant_divModCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
+integralDivisionCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP1`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
 integralDivisionCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
     .Call(`_resultant_integralDivisionCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP4 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP4`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP5 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP5`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP6 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP6`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP7 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP7`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP8 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP8`, PowersF, CoeffsF, PowersG, CoeffsG, check)
+}
+
+integralDivisionCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
+    .Call(`_resultant_integralDivisionCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, check)
 }
 

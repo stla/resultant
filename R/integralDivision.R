@@ -50,8 +50,8 @@ integralDivision <- function(qspray1, qspray2, check = TRUE) {
   }, integer(n))
   if(n == 1L) {
     Q <- integralDivisionCPP1(
-      pows1, coeffs1,
-      pows2, coeffs2,
+      rbind(pows1), coeffs1,
+      rbind(pows2), coeffs2,
       check
     )
   } else if(n == 2L) {

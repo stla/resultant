@@ -440,6 +440,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// integralDivisionCPP1
+Rcpp::List integralDivisionCPP1(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP1(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP1(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
 // integralDivisionCPP2
 Rcpp::List integralDivisionCPP2(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
 RcppExport SEXP _resultant_integralDivisionCPP2(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
@@ -452,6 +467,111 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
     Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
     rcpp_result_gen = Rcpp::wrap(integralDivisionCPP2(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP3
+Rcpp::List integralDivisionCPP3(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP3(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP3(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP4
+Rcpp::List integralDivisionCPP4(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP4(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP4(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP5
+Rcpp::List integralDivisionCPP5(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP5(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP5(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP6
+Rcpp::List integralDivisionCPP6(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP6(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP6(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP7
+Rcpp::List integralDivisionCPP7(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP7(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP7(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP8
+Rcpp::List integralDivisionCPP8(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP8(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP8(PowersF, CoeffsF, PowersG, CoeffsG, check));
+    return rcpp_result_gen;
+END_RCPP
+}
+// integralDivisionCPP9
+Rcpp::List integralDivisionCPP9(Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF, Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG, bool check);
+RcppExport SEXP _resultant_integralDivisionCPP9(SEXP PowersFSEXP, SEXP CoeffsFSEXP, SEXP PowersGSEXP, SEXP CoeffsGSEXP, SEXP checkSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersF(PowersFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsF(CoeffsFSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type PowersG(PowersGSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type CoeffsG(CoeffsGSEXP);
+    Rcpp::traits::input_parameter< bool >::type check(checkSEXP);
+    rcpp_result_gen = Rcpp::wrap(integralDivisionCPP9(PowersF, CoeffsF, PowersG, CoeffsG, check));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -486,7 +606,15 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_gcdCPP9", (DL_FUNC) &_resultant_gcdCPP9, 5},
     {"_resultant_numberOfRealRootsCPP", (DL_FUNC) &_resultant_numberOfRealRootsCPP, 2},
     {"_resultant_divModCPP1", (DL_FUNC) &_resultant_divModCPP1, 4},
+    {"_resultant_integralDivisionCPP1", (DL_FUNC) &_resultant_integralDivisionCPP1, 5},
     {"_resultant_integralDivisionCPP2", (DL_FUNC) &_resultant_integralDivisionCPP2, 5},
+    {"_resultant_integralDivisionCPP3", (DL_FUNC) &_resultant_integralDivisionCPP3, 5},
+    {"_resultant_integralDivisionCPP4", (DL_FUNC) &_resultant_integralDivisionCPP4, 5},
+    {"_resultant_integralDivisionCPP5", (DL_FUNC) &_resultant_integralDivisionCPP5, 5},
+    {"_resultant_integralDivisionCPP6", (DL_FUNC) &_resultant_integralDivisionCPP6, 5},
+    {"_resultant_integralDivisionCPP7", (DL_FUNC) &_resultant_integralDivisionCPP7, 5},
+    {"_resultant_integralDivisionCPP8", (DL_FUNC) &_resultant_integralDivisionCPP8, 5},
+    {"_resultant_integralDivisionCPP9", (DL_FUNC) &_resultant_integralDivisionCPP9, 5},
     {NULL, NULL, 0}
 };
 
