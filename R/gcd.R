@@ -26,7 +26,7 @@ gcd <- function(qspray1, qspray2, utcf = FALSE) {
   n <- max(1L, n1, n2)
   if(n >= 10L) {
     stop(
-      "Only polynomials with at more nine variables are allowed."
+      "Only polynomials with at most nine variables are allowed."
     )
   }
   coeffs1 <- qspray1@coeffs

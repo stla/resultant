@@ -3,8 +3,6 @@
 
 #include <Rcpp.h>
 
-#define CGAL_EIGEN3_ENABLED 1
-
 #include "gmp.h"
 #include <CGAL/Gmpq.h>
 #include <CGAL/Gmpz.h>

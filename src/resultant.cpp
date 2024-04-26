@@ -585,26 +585,6 @@ int numberOfRealRootsCPP(
 // -------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------- //
 
-/* 
-// -------------------------------------------------------------------------- //
-// -------------------------------------------------------------------------- //
-template 
-  <typename PolyX, typename PTX, typename MonomialX, int X>
-Rcpp::List divModCPPX(
-  Rcpp::IntegerMatrix PowersF, Rcpp::CharacterVector CoeffsF,
-  Rcpp::IntegerMatrix PowersG, Rcpp::CharacterVector CoeffsG
-) {
-  PolyX F = makePolyX<PolyX, PTX, MonomialX>(PowersF, CoeffsF);
-  PolyX G = makePolyX<PolyX, PTX, MonomialX>(PowersG, CoeffsG);
-  PolyX q; PolyX r;
-  CGAL::div_mod(F, G, q, r);
-  return Rcpp::List::create(
-    Rcpp::Named("Q") = getPolynomial<PolyX, PTX, MonomialX>(q, X),
-    Rcpp::Named("R") = getPolynomial<PolyX, PTX, MonomialX>(r, X)
-  );
-}
-*/
-
 // -------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------- //
 // [[Rcpp::export]]

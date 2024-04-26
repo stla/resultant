@@ -32,7 +32,7 @@ resultant <- function(qspray1, qspray2, var = 1) {
   # }
   if(n >= 10L) {
     stop(
-      "Only polynomials with at more nine variables are allowed."
+      "Only polynomials with at most nine variables are allowed."
     )
   }
   stopifnot(isPositiveInteger(var))
