@@ -10,4 +10,10 @@ test_that("Trivariate example", {
   #
   Ry <- resultant(f, g, var = 2)
   expect_identical(involvedVariables(Ry), c(1L, 3L))
+  #
+  SRy <- subresultants(f, g, var = 2)
+  tests <- vapply(SRy, function(qspray) {
+    !is.element(2L, involvedVariables(qspray))
+  }, logical(1L))
+  expect_true(all(tests))
 })
