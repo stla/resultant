@@ -1,6 +1,6 @@
 # resultant
 
-*Resultant of two multivariate polynomials with rational coefficients.*
+*Utilities for multivariate polynomials with rational coefficients: resultant, subresultants, greatest common divisor.*
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/stla/resultant/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/stla/resultant/actions/workflows/R-CMD-check.yaml)

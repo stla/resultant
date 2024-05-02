@@ -4,6 +4,10 @@ test_that("Trivariate example", {
   z <- qlone(3)
   f <- x^2 + y^2 + z^2 + 2
   g <- x*y + y*z
-  R <- resultant(f, g, var = 3)
-  expect_true(R == y^4 + 2*x^2*y^2 + 2*y^2)
+  #
+  Rz <- resultant(f, g, var = 3)
+  expect_true(Rz == y^4 + 2*x^2*y^2 + 2*y^2)
+  #
+  Ry <- resultant(f, g, var = 2)
+  expect_identical(involvedVariables(Ry), c(1L, 3L))
 })
