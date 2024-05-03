@@ -153,40 +153,40 @@ integralDivisionCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, check) {
     .Call(`_resultant_integralDivisionCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, check)
 }
 
-SturmHabichtCPP1 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP1`, Powers, Coeffs)
+SturmHabichtCPP1 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP1`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP2 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP2`, Powers, Coeffs)
+SturmHabichtCPP2 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP2`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP3 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP3`, Powers, Coeffs)
+SturmHabichtCPP3 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP3`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP4 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP4`, Powers, Coeffs)
+SturmHabichtCPP4 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP4`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP5 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP5`, Powers, Coeffs)
+SturmHabichtCPP5 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP5`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP6 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP6`, Powers, Coeffs)
+SturmHabichtCPP6 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP6`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP7 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP7`, Powers, Coeffs)
+SturmHabichtCPP7 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP7`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP8 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP8`, Powers, Coeffs)
+SturmHabichtCPP8 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP8`, Powers, Coeffs, var)
 }
 
-SturmHabichtCPP9 <- function(Powers, Coeffs) {
-    .Call(`_resultant_SturmHabichtCPP9`, Powers, Coeffs)
+SturmHabichtCPP9 <- function(Powers, Coeffs, var) {
+    .Call(`_resultant_SturmHabichtCPP9`, Powers, Coeffs, var)
 }
 
 principalSturmHabichtCPP1 <- function(Powers, Coeffs) {

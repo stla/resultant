@@ -4,10 +4,13 @@
 \alias{SturmHabicht}
 \title{Sturm-Habicht sequence of a polynomial}
 \usage{
-SturmHabicht(qspray)
+SturmHabicht(qspray, var = 1)
 }
 \arguments{
 \item{qspray}{a \code{qspray} polynomial having at most nine variables}
+
+\item{var}{index of the variable with respect to which the Sturm-Habicht
+sequence will be computed}
 }
 \value{
 A list of \code{qspray} polynomials, the Sturm-Habicht sequence of
