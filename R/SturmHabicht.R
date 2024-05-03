@@ -10,7 +10,7 @@
 #'   \code{qspray}, starting with the \code{0}-th Sturm-Habicht polynomial.
 #'
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables
+#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables
 #'
 #' @examples
 #' library(resultant)
@@ -29,6 +29,7 @@ SturmHabicht <- function(qspray, var = 1) {
     stop("Too large value of `var`.")
   }
   var <- as.integer(var)
+  permutation <- makePermutation(n, var)
   coeffs <- qspray@coeffs
   pows <- vapply(qspray@powers, function(pwrs) {
     out <- integer(n)
@@ -73,9 +74,10 @@ SturmHabicht <- function(qspray, var = 1) {
     )
   }
   lapply(SHsequence, function(sh) {
-    qsprayMaker(
+    p <- qsprayMaker(
       powers = Columns(sh[["Powers"]]),
       coeffs = sh[["Coeffs"]]
     )
+    permuteVariables(p, permutation)
   })
 }
