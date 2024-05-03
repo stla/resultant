@@ -747,3 +747,105 @@ Rcpp::List integralDivisionCPP9(
     PowersF, CoeffsF, PowersG, CoeffsG, check
   );
 } 
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+template 
+  <typename PolyX, typename PTX, typename MonomialX, int X>
+Rcpp::List SturmHabichtCPPX(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  PolyX P = makePolyX<PolyX, PTX, MonomialX>(Powers, Coeffs);
+  std::vector<PolyX> SHsequence;
+  CGAL::sturm_habicht_sequence(P, std::back_inserter(SHsequence));
+  int n = SHsequence.size();
+  Rcpp::List out(n);
+  for(int i = 0; i < n; i++) {
+    out(i) = getPolynomial<PolyX, PTX, MonomialX>(SHsequence[i], X);
+  }
+  return out;
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP1(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly1, PT1, Monomial1, 1>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP2(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly2, PT2, Monomial2, 2>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP3(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly3, PT3, Monomial3, 3>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP4(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly4, PT4, Monomial4, 4>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP5(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly5, PT5, Monomial5, 5>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP6(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly6, PT6, Monomial6, 6>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP7(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly7, PT7, Monomial7, 7>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP8(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly8, PT8, Monomial8, 8>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List SturmHabichtCPP9(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return SturmHabichtCPPX<Poly9, PT9, Monomial9, 9>(Powers, Coeffs);
+}

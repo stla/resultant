@@ -574,6 +574,114 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// SturmHabichtCPP1
+Rcpp::List SturmHabichtCPP1(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP1(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP1(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP2
+Rcpp::List SturmHabichtCPP2(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP2(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP2(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP3
+Rcpp::List SturmHabichtCPP3(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP3(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP3(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP4
+Rcpp::List SturmHabichtCPP4(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP4(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP4(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP5
+Rcpp::List SturmHabichtCPP5(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP5(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP5(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP6
+Rcpp::List SturmHabichtCPP6(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP6(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP6(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP7
+Rcpp::List SturmHabichtCPP7(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP7(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP7(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP8
+Rcpp::List SturmHabichtCPP8(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP8(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP8(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SturmHabichtCPP9
+Rcpp::List SturmHabichtCPP9(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_SturmHabichtCPP9(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(SturmHabichtCPP9(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
@@ -614,6 +722,15 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_integralDivisionCPP7", (DL_FUNC) &_resultant_integralDivisionCPP7, 5},
     {"_resultant_integralDivisionCPP8", (DL_FUNC) &_resultant_integralDivisionCPP8, 5},
     {"_resultant_integralDivisionCPP9", (DL_FUNC) &_resultant_integralDivisionCPP9, 5},
+    {"_resultant_SturmHabichtCPP1", (DL_FUNC) &_resultant_SturmHabichtCPP1, 2},
+    {"_resultant_SturmHabichtCPP2", (DL_FUNC) &_resultant_SturmHabichtCPP2, 2},
+    {"_resultant_SturmHabichtCPP3", (DL_FUNC) &_resultant_SturmHabichtCPP3, 2},
+    {"_resultant_SturmHabichtCPP4", (DL_FUNC) &_resultant_SturmHabichtCPP4, 2},
+    {"_resultant_SturmHabichtCPP5", (DL_FUNC) &_resultant_SturmHabichtCPP5, 2},
+    {"_resultant_SturmHabichtCPP6", (DL_FUNC) &_resultant_SturmHabichtCPP6, 2},
+    {"_resultant_SturmHabichtCPP7", (DL_FUNC) &_resultant_SturmHabichtCPP7, 2},
+    {"_resultant_SturmHabichtCPP8", (DL_FUNC) &_resultant_SturmHabichtCPP8, 2},
+    {"_resultant_SturmHabichtCPP9", (DL_FUNC) &_resultant_SturmHabichtCPP9, 2},
     {NULL, NULL, 0}
 };
 
