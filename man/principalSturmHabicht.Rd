@@ -13,8 +13,8 @@ principalSturmHabicht(qspray, var = 1)
 is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})}
 }
 \value{
-For a univariate polynomial, this returns a vector of fractions
-  given as strings.
+For a univariate polynomial, this returns a vector of \code{bigq}
+  rational numbers.
   For a multivariate polynomial, this returns a list of \code{qspray}
   polynomials that do not involve the \code{var}-th variable.
 }

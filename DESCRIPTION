@@ -20,7 +20,8 @@ Remotes: stla/qspray
 Depends:
     qspray (>= 3.0.0),
 Imports: 
-    Rcpp
+    Rcpp,
+    gmp
 Suggests: 
     testthat (>= 3.0.0)
 LinkingTo: 

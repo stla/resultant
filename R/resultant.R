@@ -6,14 +6,13 @@
 #' @param var integer indicating with respect to which variable the resultant
 #'   is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})
 #'
-#' @return For univariate polynomials, this returns a fraction given as a
-#'   string.
-#'   For bivariate polynomials, this returns a univariate
-#'   \code{qspray} polynomial.
-#'   For trivariate polynomials, this returns a bivariate
-#'   \code{qspray} polynomial. And so on.
+#' @return If both \code{qspray1} and \code{qspray2} are univariate polynomials,
+#'   the function returns a \code{bigq} rational number.
+#'   Otherwise, it returns a \code{qspray} polynomial that does not involve
+#'   the \code{var}-th variable.
 #' @export
 #' @importFrom qspray qsprayMaker numberOfVariables permuteVariables swapVariables
+#' @importFrom gmp as.bigq
 #'
 #' @examples
 #' library(resultant)
@@ -27,9 +26,6 @@ resultant <- function(qspray1, qspray2, var = 1) {
   n1 <- numberOfVariables(qspray1)
   n2 <- numberOfVariables(qspray2)
   n <- max(1L, n1, n2)
-  # if(n == 0L) {
-  #   stop("The two polynomials are constant.")
-  # }
   if(n >= 10L) {
     stop(
       "Only polynomials with at most nine variables are allowed."
@@ -52,10 +48,10 @@ resultant <- function(qspray1, qspray2, var = 1) {
     out
   }, integer(n))
   if(n == 1L) {
-    resultantCPP1(
+    as.bigq(resultantCPP1(
       pows1, coeffs1,
       pows2, coeffs2
-    )
+    ))
   } else if(n == 2L){
     coeffs <- resultantCPP2(
       pows1, coeffs1,

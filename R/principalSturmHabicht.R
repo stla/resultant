@@ -6,12 +6,13 @@
 #' @param var integer indicating with respect to which variable the resultant
 #'   is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})
 #'
-#' @return For a univariate polynomial, this returns a vector of fractions
-#'   given as strings.
+#' @return For a univariate polynomial, this returns a vector of \code{bigq}
+#'   rational numbers.
 #'   For a multivariate polynomial, this returns a list of \code{qspray}
 #'   polynomials that do not involve the \code{var}-th variable.
 #' @export
 #' @importFrom qspray qsprayMaker numberOfVariables permuteVariables
+#' @importFrom gmp as.bigq
 #'
 #' @examples
 #' library(resultant)
@@ -38,9 +39,9 @@ principalSturmHabicht <- function(qspray, var = 1) {
     out
   }, integer(n))
   if(n == 1L) {
-    principalSturmHabichtCPP1(
+    as.bigq(principalSturmHabichtCPP1(
       pows, coeffs
-    )
+    ))
   } else {
     permutation <- makePermutation(n, var)
     ipermutation <- inversePermutation(permutation) - 1L

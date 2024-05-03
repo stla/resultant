@@ -37,40 +37,40 @@ resultantCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
     .Call(`_resultant_resultantCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
-    .Call(`_resultant_subresultantsCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
+principalSubresultantsCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG) {
+    .Call(`_resultant_principalSubresultantsCPP1`, PowersF, CoeffsF, PowersG, CoeffsG)
 }
 
-subresultantsCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permute) {
-    .Call(`_resultant_subresultantsCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, permute)
+principalSubresultantsCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permute) {
+    .Call(`_resultant_principalSubresultantsCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, permute)
 }
 
-subresultantsCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP4 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP4`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP4 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP4`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP5 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP5`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP5 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP5`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP6 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP6`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP6 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP6`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP7 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP7`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP7 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP7`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP8 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP8`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP8 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP8`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
-subresultantsCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
-    .Call(`_resultant_subresultantsCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
+principalSubresultantsCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, permutation) {
+    .Call(`_resultant_principalSubresultantsCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, permutation)
 }
 
 gcdCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG, UTCF) {

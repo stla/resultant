@@ -14,12 +14,10 @@ variables}
 is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})}
 }
 \value{
-For univariate polynomials, this returns a fraction given as a
-  string.
-  For bivariate polynomials, this returns a univariate
-  \code{qspray} polynomial.
-  For trivariate polynomials, this returns a bivariate
-  \code{qspray} polynomial. And so on.
+If both \code{qspray1} and \code{qspray2} are univariate polynomials,
+  the function returns a \code{bigq} rational number.
+  Otherwise, it returns a \code{qspray} polynomial that does not involve
+  the \code{var}-th variable.
 }
 \description{
 Resultant of two polynomials with rational coefficients.

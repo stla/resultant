@@ -3,5 +3,5 @@ test_that("Univariate example", {
   f <- x^2 - 2*x - 1
   g <- x^2 - 3
   r <- resultant(f, g)
-  expect_equal(r, "-8/1")
+  expect_equal(r, gmp::as.bigq("-8/1"))
 })
