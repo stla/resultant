@@ -1,35 +1,20 @@
-#' @title Integral division of two polynomials
-#' @description Integral division (division without remainder) of two
-#'   polynomials with rational coefficients.
+#' @title Sturm-Habicht sequence of a polynomial
+#' @description Sturm-Habicht sequence of a polynomial with rational
+#'   coefficients.
 #'
-#' @param qspray1,qspray2 two \code{qspray} polynomials having at most nine
-#'   variables
-#' @param  Boolean, whether to  that \code{qspray2} divides
-#'   \code{qspray1}
+#' @param qspray a \code{qspray} polynomial having at most nine variables
 #'
-#' @return If \code{=TRUE}, this returns \code{NULL} if \code{qspray2}
-#'   does not divide \code{qspray1}, otherwise this returns a \code{qspray}
-#'   polynomial, the quotient of \code{qspray1} by \code{qspray2}.
-#'   If \code{=FALSE}, this always returns a \code{qspray} polynomial,
-#'   which is the quotient of \code{qspray1} by \code{qspray2} if
-#'   \code{qspray2} divides \code{qspray1}, otherwise it is an undefined
-#'   polynomial. So you can use \code{=FALSE} only when you are sure that
-#'   \code{qspray2} divides \code{qspray1}.
+#' @return A list of \code{qspray} polynomials, the Sturm-Habicht sequence of
+#'   \code{qspray}, starting with the \code{0}-th Sturm-Habicht polynomial.
 #'
 #' @export
 #' @importFrom qspray qsprayMaker numberOfVariables
-#'
-#' @seealso \code{\link{univariateDivision}},
-#'   \code{\link[qspray]{qsprayDivision}}.
 #'
 #' @examples
 #' library(resultant)
 #' x <- qlone(1)
 #' y <- qlone(2)
-#' SHsequence <- x^2 + 2*x*y + 1
-#' qspray1 <- q * (x^4 + y^2 + 2)
-#' qspray2 <- x^4 + y^2 + 2
-#' SturmHabicht(qspray1, qspray2) == q # should be TRUE
+#' SturmHabicht(x^3*y^2 + 2*x*y + 1)
 SturmHabicht <- function(qspray) {
   n <- max(1L, numberOfVariables(qspray))
   if(n >= 10L) {

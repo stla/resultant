@@ -849,3 +849,142 @@ Rcpp::List SturmHabichtCPP9(
 ) {
   return SturmHabichtCPPX<Poly9, PT9, Monomial9, 9>(Powers, Coeffs);
 }
+
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+template 
+  <typename PolyX, typename PTX, typename MonomialX, 
+   typename PolyW, typename PTW, typename MonomialW, int W>
+Rcpp::List principalSturmHabichtCPPX(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  PolyX P = makePolyX<PolyX, PTX, MonomialX>(Powers, Coeffs);
+  typename PTX::Permute permute;
+  P = permute(P, permutation.begin(), permutation.end());
+  std::vector<PolyW> PSHsequence;
+  CGAL::principal_sturm_habicht_sequence(P, std::back_inserter(PSHsequence));
+  int n = PSHsequence.size();
+  Rcpp::List out(n);
+  for(int i = 0; i < n; i++) {
+    out(i) = getPolynomial<PolyW, PTW, MonomialW>(PSHsequence[i], W);
+  }
+  return out;
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::CharacterVector principalSturmHabichtCPP1(
+  Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs
+) {
+  Poly1 P = makePoly1(Powers, Coeffs);
+  std::vector<CGAL::Gmpq> PSHsequence;
+  CGAL::principal_sturm_habicht_sequence(P, std::back_inserter(PSHsequence));
+  int n = PSHsequence.size();
+  Rcpp::CharacterVector out(n);
+  for(int i = 0; i < n; i++) {
+    out(i) = q2str(PSHsequence[i]);
+  }
+  return out;
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP2(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly2, PT2, Monomial2, Poly1, PT1, Monomial1, 1>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP3(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly3, PT3, Monomial3, Poly2, PT2, Monomial2, 2>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP4(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly4, PT4, Monomial4, Poly3, PT3, Monomial3, 3>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP5(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly5, PT5, Monomial5, Poly4, PT4, Monomial4, 4>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP6(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly6, PT6, Monomial6, Poly5, PT5, Monomial5, 5>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP7(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly7, PT7, Monomial7, Poly6, PT6, Monomial6, 6>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP8(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly8, PT8, Monomial8, Poly7, PT7, Monomial7, 7>(
+    Powers, Coeffs, permutation
+  );
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List principalSturmHabichtCPP9(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs,
+  Rcpp::IntegerVector permutation
+) {
+  return principalSturmHabichtCPPX<Poly9, PT9, Monomial9, Poly8, PT8, Monomial8, 8>(
+    Powers, Coeffs, permutation
+  );
+}
