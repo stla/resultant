@@ -682,6 +682,122 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// principalSturmHabichtCPP1
+Rcpp::CharacterVector principalSturmHabichtCPP1(Rcpp::IntegerVector Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_principalSturmHabichtCPP1(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP1(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP2
+Rcpp::List principalSturmHabichtCPP2(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP2(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP2(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP3
+Rcpp::List principalSturmHabichtCPP3(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP3(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP3(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP4
+Rcpp::List principalSturmHabichtCPP4(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP4(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP4(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP5
+Rcpp::List principalSturmHabichtCPP5(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP5(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP5(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP6
+Rcpp::List principalSturmHabichtCPP6(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP6(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP6(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP7
+Rcpp::List principalSturmHabichtCPP7(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP7(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP7(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP8
+Rcpp::List principalSturmHabichtCPP8(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP8(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP8(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
+// principalSturmHabichtCPP9
+Rcpp::List principalSturmHabichtCPP9(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs, Rcpp::IntegerVector permutation);
+RcppExport SEXP _resultant_principalSturmHabichtCPP9(SEXP PowersSEXP, SEXP CoeffsSEXP, SEXP permutationSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type permutation(permutationSEXP);
+    rcpp_result_gen = Rcpp::wrap(principalSturmHabichtCPP9(Powers, Coeffs, permutation));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
@@ -731,6 +847,15 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_SturmHabichtCPP7", (DL_FUNC) &_resultant_SturmHabichtCPP7, 2},
     {"_resultant_SturmHabichtCPP8", (DL_FUNC) &_resultant_SturmHabichtCPP8, 2},
     {"_resultant_SturmHabichtCPP9", (DL_FUNC) &_resultant_SturmHabichtCPP9, 2},
+    {"_resultant_principalSturmHabichtCPP1", (DL_FUNC) &_resultant_principalSturmHabichtCPP1, 2},
+    {"_resultant_principalSturmHabichtCPP2", (DL_FUNC) &_resultant_principalSturmHabichtCPP2, 3},
+    {"_resultant_principalSturmHabichtCPP3", (DL_FUNC) &_resultant_principalSturmHabichtCPP3, 3},
+    {"_resultant_principalSturmHabichtCPP4", (DL_FUNC) &_resultant_principalSturmHabichtCPP4, 3},
+    {"_resultant_principalSturmHabichtCPP5", (DL_FUNC) &_resultant_principalSturmHabichtCPP5, 3},
+    {"_resultant_principalSturmHabichtCPP6", (DL_FUNC) &_resultant_principalSturmHabichtCPP6, 3},
+    {"_resultant_principalSturmHabichtCPP7", (DL_FUNC) &_resultant_principalSturmHabichtCPP7, 3},
+    {"_resultant_principalSturmHabichtCPP8", (DL_FUNC) &_resultant_principalSturmHabichtCPP8, 3},
+    {"_resultant_principalSturmHabichtCPP9", (DL_FUNC) &_resultant_principalSturmHabichtCPP9, 3},
     {NULL, NULL, 0}
 };
 

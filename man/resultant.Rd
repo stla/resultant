@@ -7,7 +7,7 @@
 resultant(qspray1, qspray2, var = 1)
 }
 \arguments{
-\item{qspray1, qspray2}{two \code{qspray} polynomials with at more nine
+\item{qspray1, qspray2}{two \code{qspray} polynomials with at most nine
 variables}
 
 \item{var}{integer indicating with respect to which variable the resultant

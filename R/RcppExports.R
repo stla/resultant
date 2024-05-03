@@ -189,3 +189,39 @@ SturmHabichtCPP9 <- function(Powers, Coeffs) {
     .Call(`_resultant_SturmHabichtCPP9`, Powers, Coeffs)
 }
 
+principalSturmHabichtCPP1 <- function(Powers, Coeffs) {
+    .Call(`_resultant_principalSturmHabichtCPP1`, Powers, Coeffs)
+}
+
+principalSturmHabichtCPP2 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP2`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP3 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP3`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP4 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP4`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP5 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP5`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP6 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP6`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP7 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP7`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP8 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP8`, Powers, Coeffs, permutation)
+}
+
+principalSturmHabichtCPP9 <- function(Powers, Coeffs, permutation) {
+    .Call(`_resultant_principalSturmHabichtCPP9`, Powers, Coeffs, permutation)
+}
+

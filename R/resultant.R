@@ -1,7 +1,7 @@
 #' @title Resultant of two polynomials
 #' @description Resultant of two polynomials with rational coefficients.
 #'
-#' @param qspray1,qspray2 two \code{qspray} polynomials with at more nine
+#' @param qspray1,qspray2 two \code{qspray} polynomials with at most nine
 #'   variables
 #' @param var integer indicating with respect to which variable the resultant
 #'   is desired (e.g. \code{1} for \code{x} and \code{2} for \code{y})
