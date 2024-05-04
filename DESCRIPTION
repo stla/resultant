@@ -21,7 +21,8 @@ Depends:
     qspray (>= 3.0.0),
 Imports: 
     Rcpp,
-    gmp
+    gmp,
+    utils
 Suggests: 
     testthat (>= 3.0.0)
 LinkingTo: 

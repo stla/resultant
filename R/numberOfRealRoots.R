@@ -32,3 +32,83 @@ numberOfRealRoots <- function(qspray) {
     stop("The polynomial is not univariate.")
   }
 }
+
+signVariations <- function(x) {
+  signs <- vapply(x, sign, integer(1L))
+  l <- length(signs)
+  chunks2 <- cbind(vapply(seq_len(l - 1L), function(i) {
+    signs[c(i, i+1L)]
+  }, integer(2L)))
+  v <- sum(apply(chunks2, 2L, function(chunk) {
+    identical(chunk, c(1L, -1L)) || identical(chunk, c(-1L, 1L))
+  }))
+  if(l >= 3L) {
+    chunks3 <- cbind(vapply(seq_len(l - 2L), function(i) {
+      signs[c(i, i+1L, i+2L)]
+    }, integer(3L)))
+    v <- v + sum(apply(chunks3, 2L, function(chunk) {
+      identical(chunk, c(1L, 0L, -1L)) ||
+        identical(chunk, c(-1L, 0L, 1L))
+    }))
+    if(l >= 4L) {
+      chunks4 <- cbind(vapply(seq_len(l - 3L), function(i) {
+        signs[c(i, i+1L, i+2L, i+3L)]
+      }, integer(4L)))
+      v <- v + sum(apply(chunks4, 2L, function(chunk) {
+        identical(chunk, c(1L, 0L, 0L, -1L)) ||
+          identical(chunk, c(-1L, 0L, 0L, 1L))
+      })) + 2L * sum(apply(chunks4, 2L, function(chunk) {
+        identical(chunk, c(1L, 0L, 0L, 1L)) ||
+          identical(chunk, c(-1L, 0L, 0L, -1L))
+      }))
+    }
+  }
+  v
+}
+
+numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
+  #' @importFrom qspray isUnivariate isQzero isConstant evalQspray
+  #' @importFrom gmp as.bigq c_bigq
+  #' @importFrom utils head
+  if(!isUnivariate(qspray)) {
+    stop("The polynomial is not univariate.")
+  }
+  interval <- range(c(as.bigq(lower), as.bigq(upper)))
+  alpha <- interval[1L]
+  beta  <- interval[2L]
+  equalBounds <- alpha == beta
+  singleton <- equalBounds && closed
+  empty     <- equalBounds && !closed
+  if(empty) {
+    0L
+  } else if(isQzero(qspray)) {
+    Inf
+  } else if(isConstant(qspray)){
+    0L
+  } else {
+    valueAtAlpha <- evalQspray(qspray, alpha)
+    zeroAtAlpha <- valueAtAlpha == 0L
+    if(singleton) {
+      if(zeroAtAlpha) 1L else 0L
+    } else {
+      valueAtBeta <- evalQspray(qspray, beta)
+      zeroAtBeta  <- valueAtBeta == 0L
+      SHsequence <- head(SturmHabicht(qspray, 1L), -1L)
+      SHsequence <- Filter(Negate(isQzero), SHsequence)
+      valuesAtAlpha <- c(c_bigq(lapply(SHsequence, function(p) {
+        evalQspray(p, alpha)
+      })), valueAtAlpha)
+      valuesAtBeta <- c(c_bigq(lapply(SHsequence, function(p) {
+        evalQspray(p, beta)
+      })), valueAtBeta)
+      nroots <- signVariations(valuesAtAlpha) - signVariations(valuesAtBeta)
+      if(zeroAtBeta) {
+        nroots <- nroots - 1L
+      }
+      if(closed) {
+        nroots <- nroots + zeroAtAlpha + zeroAtBeta
+      }
+      nroots
+    }
+  }
+}
