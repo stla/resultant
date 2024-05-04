@@ -4,6 +4,7 @@
 #' @param qspray a univariate \code{qspray} polynomial
 #'
 #' @return An integer, the number of real roots of the polynomial.
+#' @note The roots are not counted with their multiplicity.
 #' @export
 #' @importFrom qspray numberOfVariables isQzero
 #'
@@ -77,6 +78,7 @@ signVariations <- function(x) {
 #'
 #' @return An integer, the number of real roots of the polynomial in the
 #'   interval.
+#' @note The roots are not counted with their multiplicity.
 #' @export
 #' @importFrom qspray isUnivariate isQzero isConstant evalQspray
 #' @importFrom gmp as.bigq c_bigq
@@ -92,6 +94,9 @@ numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
     stop("The polynomial is not univariate.")
   }
   interval <- range(c(as.bigq(lower), as.bigq(upper)))
+  if(anyNA(interval)) {
+    stop("Invalid bounds.")
+  }
   alpha <- interval[1L]
   beta  <- interval[2L]
   equalBounds <- alpha == beta
@@ -100,7 +105,7 @@ numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
   if(empty) {
     0L
   } else if(isQzero(qspray)) {
-    Inf
+    if(singleton) 1L else Inf
   } else if(isConstant(qspray)){
     0L
   } else {
@@ -130,3 +135,41 @@ numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
     }
   }
 }
+
+# numberOfRealRootsInRightUnboundedInterval <- function(
+#     qspray, alpha, closed
+# ) {
+#   alpha <- as.bigq(alpha)
+#   if(is.na(alpha)) {
+#     stop("Invalid bound.")
+#   }
+#   if(isQzero(qspray)) {
+#     Inf
+#   } else if(isConstant(qspray)){
+#     0L
+#   } else {
+#     valueAtAlpha <- evalQspray(qspray, alpha)
+#     zeroAtAlpha <- valueAtAlpha == 0L
+#     SHsequence <- head(SturmHabicht(qspray, 1L), -1L)
+#     SHsequence <- Filter(Negate(isQzero), SHsequence)
+#     valuesAtAlpha <- c(c_bigq(lapply(SHsequence, function(p) {
+#       evalQspray(p, alpha)
+#     })), valueAtAlpha)
+#     nroots <- signVariations(valuesAtAlpha)
+#     if(closed) {
+#       nroots <- nroots + zeroAtAlpha
+#     }
+#     nroots
+#   }
+# }
+#
+# numberOfRealRootsInLeftUnboundedInterval <- function(
+#     qspray, beta, closed
+# ) {
+#   if(isQzero(qspray)) {
+#     Inf
+#   } else {
+#     numberOfRealRoots(qspray) -
+#       numberOfRealRootsInRightUnboundedInterval(qspray, beta, !closed)
+#   }
+# }

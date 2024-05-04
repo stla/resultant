@@ -23,3 +23,11 @@ makePermutation <- function(n, var) {
 Columns <- function(M) {
   apply(M, 2L, identity, simplify = FALSE)
 }
+
+isPlusInfinity <- function(x) {
+  is.infinite(x) && x > 0
+}
+
+isMinusInfinity <- function(x) {
+  is.infinite(x) && x < 0
+}
