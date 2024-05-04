@@ -1,0 +1,11 @@
+test_that("Number of real roots in interval.", {
+  x <- qlone(1)
+  p <- (x - 2)*(x - 4)*(x - 6)*(x - 8)*(x - 10)
+  expect_identical(numberOfRealRootsInInterval(p, 0, 12), 5L)
+  expect_identical(numberOfRealRootsInInterval(p, 0, 8), 4L)
+  expect_identical(numberOfRealRootsInInterval(p, 0, 8, closed = FALSE), 3L)
+  expect_identical(numberOfRealRootsInInterval(p, 2, 8), 4L)
+  expect_identical(numberOfRealRootsInInterval(p, 2, 8, closed = FALSE), 2L)
+  expect_identical(numberOfRealRootsInInterval(x^4 + 1, -20, 20), 0L)
+  expect_identical(numberOfRealRootsInInterval(x^4 + 1, -20, 20, FALSE), 0L)
+})

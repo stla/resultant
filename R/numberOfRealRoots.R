@@ -66,10 +66,28 @@ signVariations <- function(x) {
   v
 }
 
+#' @title Number of real roots in an interval
+#' @description Number of distinct real roots of a univariate polynomial in
+#'   an interval.
+#'
+#' @param qspray a univariate \code{qspray} polynomial
+#' @param lower,upper the bounds of the interval, \code{bigq} numbers or
+#'   objects coercible to \code{bigq} numbers
+#' @param closed Boolean, whether to consider the interval is closed or open
+#'
+#' @return An integer, the number of real roots of the polynomial in the
+#'   interval.
+#' @export
+#' @importFrom qspray isUnivariate isQzero isConstant evalQspray
+#' @importFrom gmp as.bigq c_bigq
+#' @importFrom utils head
+#'
+#' @examples
+#' library(resultant)
+#' x <- qlone(1)
+#' P <- 2*x^4 + x^3 - 3*x^2 - x + 1
+#' numberOfRealRootsInInterval(P, 0, 1)
 numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
-  #' @importFrom qspray isUnivariate isQzero isConstant evalQspray
-  #' @importFrom gmp as.bigq c_bigq
-  #' @importFrom utils head
   if(!isUnivariate(qspray)) {
     stop("The polynomial is not univariate.")
   }
