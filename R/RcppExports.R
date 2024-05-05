@@ -225,3 +225,39 @@ principalSturmHabichtCPP9 <- function(Powers, Coeffs, permutation) {
     .Call(`_resultant_principalSturmHabichtCPP9`, Powers, Coeffs, permutation)
 }
 
+squareFreeFactorizationCPP1 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP1`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP2 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP2`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP3 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP3`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP4 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP4`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP5 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP5`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP6 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP6`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP7 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP7`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP8 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP8`, Powers, Coeffs)
+}
+
+squareFreeFactorizationCPP9 <- function(Powers, Coeffs) {
+    .Call(`_resultant_squareFreeFactorizationCPP9`, Powers, Coeffs)
+}
+

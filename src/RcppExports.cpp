@@ -807,6 +807,114 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// squareFreeFactorizationCPP1
+Rcpp::List squareFreeFactorizationCPP1(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP1(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP1(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP2
+Rcpp::List squareFreeFactorizationCPP2(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP2(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP2(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP3
+Rcpp::List squareFreeFactorizationCPP3(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP3(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP3(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP4
+Rcpp::List squareFreeFactorizationCPP4(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP4(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP4(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP5
+Rcpp::List squareFreeFactorizationCPP5(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP5(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP5(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP6
+Rcpp::List squareFreeFactorizationCPP6(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP6(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP6(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP7
+Rcpp::List squareFreeFactorizationCPP7(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP7(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP7(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP8
+Rcpp::List squareFreeFactorizationCPP8(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP8(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP8(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
+// squareFreeFactorizationCPP9
+Rcpp::List squareFreeFactorizationCPP9(Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs);
+RcppExport SEXP _resultant_squareFreeFactorizationCPP9(SEXP PowersSEXP, SEXP CoeffsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::IntegerMatrix >::type Powers(PowersSEXP);
+    Rcpp::traits::input_parameter< Rcpp::CharacterVector >::type Coeffs(CoeffsSEXP);
+    rcpp_result_gen = Rcpp::wrap(squareFreeFactorizationCPP9(Powers, Coeffs));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_resultant_resultantCPP1", (DL_FUNC) &_resultant_resultantCPP1, 4},
@@ -865,6 +973,15 @@ static const R_CallMethodDef CallEntries[] = {
     {"_resultant_principalSturmHabichtCPP7", (DL_FUNC) &_resultant_principalSturmHabichtCPP7, 3},
     {"_resultant_principalSturmHabichtCPP8", (DL_FUNC) &_resultant_principalSturmHabichtCPP8, 3},
     {"_resultant_principalSturmHabichtCPP9", (DL_FUNC) &_resultant_principalSturmHabichtCPP9, 3},
+    {"_resultant_squareFreeFactorizationCPP1", (DL_FUNC) &_resultant_squareFreeFactorizationCPP1, 2},
+    {"_resultant_squareFreeFactorizationCPP2", (DL_FUNC) &_resultant_squareFreeFactorizationCPP2, 2},
+    {"_resultant_squareFreeFactorizationCPP3", (DL_FUNC) &_resultant_squareFreeFactorizationCPP3, 2},
+    {"_resultant_squareFreeFactorizationCPP4", (DL_FUNC) &_resultant_squareFreeFactorizationCPP4, 2},
+    {"_resultant_squareFreeFactorizationCPP5", (DL_FUNC) &_resultant_squareFreeFactorizationCPP5, 2},
+    {"_resultant_squareFreeFactorizationCPP6", (DL_FUNC) &_resultant_squareFreeFactorizationCPP6, 2},
+    {"_resultant_squareFreeFactorizationCPP7", (DL_FUNC) &_resultant_squareFreeFactorizationCPP7, 2},
+    {"_resultant_squareFreeFactorizationCPP8", (DL_FUNC) &_resultant_squareFreeFactorizationCPP8, 2},
+    {"_resultant_squareFreeFactorizationCPP9", (DL_FUNC) &_resultant_squareFreeFactorizationCPP9, 2},
     {NULL, NULL, 0}
 };
 

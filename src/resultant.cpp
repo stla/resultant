@@ -990,3 +990,122 @@ Rcpp::List principalSturmHabichtCPP9(
     Powers, Coeffs, permutation
   );
 }
+
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+template 
+  <typename PolyX, typename PTX, typename MonomialX, int X>
+Rcpp::List squareFreeFactorizationCPPX(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  const PolyX P = makePolyX<PolyX, PTX, MonomialX>(Powers, Coeffs);
+  typename PTX::Square_free_factorize squareFreeFactorize;
+  std::vector<std::pair<PolyX,int>> sfFactorization;
+  CGAL::Gmpq a;
+  squareFreeFactorize(P, std::back_inserter(sfFactorization), a);
+  Rcpp::CharacterVector constantFactor = 
+    Rcpp::CharacterVector::create(q2str(a));
+  int n = sfFactorization.size();
+  Rcpp::List factorization(n);
+  for(int i = 0; i < n; i++) {
+    std::pair<PolyX,int> factor = sfFactorization[i];
+    PolyX polynomial = factor.first;
+    Rcpp::IntegerVector multiplicity = 
+      Rcpp::IntegerVector::create(factor.second);
+    factorization(i) = Rcpp::List::create(
+      Rcpp::Named("qspray") = 
+        getPolynomial<PolyX, PTX, MonomialX>(polynomial, X),
+      Rcpp::Named("multiplicity") = multiplicity
+    );
+  }
+  return Rcpp::List::create(
+    Rcpp::Named("constantFactor")     = constantFactor,
+    Rcpp::Named("nonConstantFactors") = factorization
+  );
+}
+
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP1(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly1, PT1, Monomial1, 1>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP2(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly2, PT2, Monomial2, 2>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP3(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly3, PT3, Monomial3, 3>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP4(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly4, PT4, Monomial4, 4>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP5(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly5, PT5, Monomial5, 5>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP6(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly6, PT6, Monomial6, 6>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP7(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly7, PT7, Monomial7, 7>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP8(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly8, PT8, Monomial8, 8>(Powers, Coeffs);
+}
+
+// -------------------------------------------------------------------------- //
+// -------------------------------------------------------------------------- //
+// [[Rcpp::export]]
+Rcpp::List squareFreeFactorizationCPP9(
+  Rcpp::IntegerMatrix Powers, Rcpp::CharacterVector Coeffs
+) {
+  return squareFreeFactorizationCPPX<Poly9, PT9, Monomial9, 9>(Powers, Coeffs);
+}
