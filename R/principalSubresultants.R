@@ -11,7 +11,7 @@
 #' @return If both \code{qspray1} and \code{qspray2} are univariate polynomials,
 #'   the function returns a vector of \code{bigq} rational numbers.
 #'   Otherwise, it returns a list of \code{qspray} polynomials that do not
-#'   involve the \code{var}-th variable
+#'   involve the \code{var}-th variable.
 #' @export
 #' @importFrom qspray qsprayMaker numberOfVariables permuteVariables
 #' @importFrom gmp as.bigq

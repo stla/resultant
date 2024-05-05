@@ -261,3 +261,39 @@ squareFreeFactorizationCPP9 <- function(Powers, Coeffs) {
     .Call(`_resultant_squareFreeFactorizationCPP9`, Powers, Coeffs)
 }
 
+subresultantsCPP1 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP1`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP2 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP2`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP3 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP3`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP4 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP4`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP5 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP5`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP6 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP6`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP7 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP7`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP8 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP8`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+
+subresultantsCPP9 <- function(PowersF, CoeffsF, PowersG, CoeffsG, var) {
+    .Call(`_resultant_subresultantsCPP9`, PowersF, CoeffsF, PowersG, CoeffsG, var)
+}
+

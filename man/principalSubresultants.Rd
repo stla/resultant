@@ -18,7 +18,7 @@ subresultants are desired (e.g. \code{1} for \code{x} and \code{2} for
 If both \code{qspray1} and \code{qspray2} are univariate polynomials,
   the function returns a vector of \code{bigq} rational numbers.
   Otherwise, it returns a list of \code{qspray} polynomials that do not
-  involve the \code{var}-th variable
+  involve the \code{var}-th variable.
 }
 \description{
 Principal subresultants of two polynomials with rational

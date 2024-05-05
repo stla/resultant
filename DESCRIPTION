@@ -3,13 +3,14 @@ Title: Resultant, Subresultants, and GCD of Two Multivariate Polynomials
 Version: 0.0.0.9000
 Authors@R: 
     person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre"))
-Description: Computation of the resultant, the subresultants, the greatest 
-    common divisor, and the integral division (aka division without remainder) 
-    of two multivariate polynomials with rational coefficients. These 
-    computations are performed by the 'C++' library 'CGAL' 
-    (<https://www.cgal.org/>). Resultants have applications in polynomial
+Description: Resultant, subresultants, greatest common divisor, integral 
+    division (aka division without remainder) of two multivariate polynomials 
+    with rational coefficients, Sturm-Habicht sequence and square-free 
+    factorization of a multivariate polynomial with rational coefficients. 
+    The computations are performed by the 'C++' library 'CGAL' 
+    (<https://www.cgal.org/>). Resultants have applications in polynomial 
     systems solving, number theory, and algebraic geometry. The package
-    also contains a function computing the number of real roots of a
+    also contains some functions computing the number of real roots of a
     univariate polynomial with rational coefficients, and a function computing
     the division with remainder of two univariate polynomials with rational 
     coefficients.
