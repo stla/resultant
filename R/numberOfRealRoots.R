@@ -73,14 +73,15 @@ signVariations <- function(x) {
 #'
 #' @param qspray a univariate \code{qspray} polynomial
 #' @param lower,upper the bounds of the interval, \code{bigq} numbers or
-#'   objects coercible to \code{bigq} numbers
+#'   objects coercible to \code{bigq} numbers, and it is also possible to set
+#'   \code{lower = -Inf} and \code{upper = Inf}
 #' @param closed Boolean, whether to consider the interval is closed or open
 #'
 #' @return An integer, the number of real roots of the polynomial in the
 #'   interval.
 #' @note The roots are not counted with their multiplicity.
 #' @export
-#' @importFrom qspray isUnivariate isQzero isConstant evalQspray
+#' @importFrom qspray isUnivariate isQzero isConstant evalQspray leadingTerm
 #' @importFrom gmp as.bigq c_bigq
 #' @importFrom utils head
 #'
@@ -93,6 +94,18 @@ numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
   if(!isUnivariate(qspray)) {
     stop("The polynomial is not univariate.")
   }
+  if(isMinusInfinity(lower) && isPlusInfinity(upper)) {
+    numberOfRealRoots(qspray)
+  } else if(isMinusInfinity(lower)) {
+    numberOfRealRootsInLeftUnboundedInterval(qspray, upper, closed)
+  } else if(isPlusInfinity(upper)) {
+    numberOfRealRootsInRightUnboundedInterval(qspray, lower, closed)
+  } else {
+    numberOfRealRootsInBoundedInterval(qspray, lower, upper, closed)
+  }
+}
+
+numberOfRealRootsInBoundedInterval <- function(qspray, lower, upper, closed) {
   interval <- range(c(as.bigq(lower), as.bigq(upper)))
   if(anyNA(interval)) {
     stop("Invalid bounds.")
@@ -136,40 +149,44 @@ numberOfRealRootsInInterval <- function(qspray, lower, upper, closed = TRUE) {
   }
 }
 
-# numberOfRealRootsInRightUnboundedInterval <- function(
-#     qspray, alpha, closed
-# ) {
-#   alpha <- as.bigq(alpha)
-#   if(is.na(alpha)) {
-#     stop("Invalid bound.")
-#   }
-#   if(isQzero(qspray)) {
-#     Inf
-#   } else if(isConstant(qspray)){
-#     0L
-#   } else {
-#     valueAtAlpha <- evalQspray(qspray, alpha)
-#     zeroAtAlpha <- valueAtAlpha == 0L
-#     SHsequence <- head(SturmHabicht(qspray, 1L), -1L)
-#     SHsequence <- Filter(Negate(isQzero), SHsequence)
-#     valuesAtAlpha <- c(c_bigq(lapply(SHsequence, function(p) {
-#       evalQspray(p, alpha)
-#     })), valueAtAlpha)
-#     nroots <- signVariations(valuesAtAlpha)
-#     if(closed) {
-#       nroots <- nroots + zeroAtAlpha
-#     }
-#     nroots
-#   }
-# }
-#
-# numberOfRealRootsInLeftUnboundedInterval <- function(
-#     qspray, beta, closed
-# ) {
-#   if(isQzero(qspray)) {
-#     Inf
-#   } else {
-#     numberOfRealRoots(qspray) -
-#       numberOfRealRootsInRightUnboundedInterval(qspray, beta, !closed)
-#   }
-# }
+numberOfRealRootsInRightUnboundedInterval <- function(
+    qspray, alpha, closed
+) {
+  alpha <- as.bigq(alpha)
+  if(is.na(alpha)) {
+    stop("Invalid bound.")
+  }
+  if(isQzero(qspray)) {
+    Inf
+  } else if(isConstant(qspray)){
+    0L
+  } else {
+    valueAtAlpha <- evalQspray(qspray, alpha)
+    zeroAtAlpha <- valueAtAlpha == 0L
+    valueAtInfinity <- leadingTerm(qspray, 1L)[["coeff"]]
+    SHsequence <- head(SturmHabicht(qspray, 1L), -1L)
+    SHsequence <- Filter(Negate(isQzero), SHsequence)
+    valuesAtAlpha <- c(c_bigq(lapply(SHsequence, function(p) {
+      evalQspray(p, alpha)
+    })), valueAtAlpha)
+    valuesAtInfinity <- c(c_bigq(lapply(SHsequence, function(p) {
+      leadingTerm(p, 1L)[["coeff"]]
+    })), valueAtInfinity)
+    nroots <- signVariations(valuesAtAlpha) - signVariations(valuesAtInfinity)
+    if(closed) {
+      nroots <- nroots + zeroAtAlpha
+    }
+    nroots
+  }
+}
+
+numberOfRealRootsInLeftUnboundedInterval <- function(
+    qspray, beta, closed
+) {
+  if(isQzero(qspray)) {
+    Inf
+  } else {
+    numberOfRealRoots(qspray) -
+      numberOfRealRootsInRightUnboundedInterval(qspray, beta, !closed)
+  }
+}

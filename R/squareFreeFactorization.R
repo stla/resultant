@@ -8,11 +8,12 @@
 #'    \code{nonConstantFactors}. In the field \code{constantFactor}, there is
 #'    a \code{bigq} rational number, the constant factor of the factorization.
 #'    In the field \code{nonConstantFactors}, there is a list providing the
-#'    square-free and pairwise comprime \code{qspray} polynomials of the
+#'    square-free and pairwise coprime \code{qspray} polynomials of the
 #'    factorization with their multiplicity.
 #'
 #' @export
 #' @importFrom qspray qsprayMaker numberOfVariables isConstant qone getConstantTerm
+#' @importFrom gmp as.bigq
 #'
 #' @examples
 #' library(resultant)

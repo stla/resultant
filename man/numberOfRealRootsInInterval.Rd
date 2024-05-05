@@ -10,7 +10,8 @@ numberOfRealRootsInInterval(qspray, lower, upper, closed = TRUE)
 \item{qspray}{a univariate \code{qspray} polynomial}
 
 \item{lower, upper}{the bounds of the interval, \code{bigq} numbers or
-objects coercible to \code{bigq} numbers}
+objects coercible to \code{bigq} numbers, and it is also possible to set
+\code{lower = -Inf} and \code{upper = Inf}}
 
 \item{closed}{Boolean, whether to consider the interval is closed or open}
 }
