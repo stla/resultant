@@ -170,7 +170,11 @@ numberOfRealRootsInRightUnboundedInterval <- function(
       evalQspray(p, alpha)
     })), valueAtAlpha)
     valuesAtInfinity <- c(c_bigq(lapply(SHsequence, function(p) {
-      leadingTerm(p, 1L)[["coeff"]]
+      if(isQzero(p)) {
+        as.bigq(0L)
+      } else {
+        leadingTerm(p, 1L)[["coeff"]]
+      }
     })), valueAtInfinity)
     nroots <- signVariations(valuesAtAlpha) - signVariations(valuesAtInfinity)
     if(closed) {
