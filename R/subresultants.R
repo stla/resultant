@@ -9,7 +9,7 @@
 #'
 #' @return A list of \code{qspray} polynomials.
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables
+#' @importFrom qspray qsprayMaker numberOfVariables showQsprayXYZ showQsprayX1X2X3 showQsprayOption<-
 #' @importFrom gmp as.bigq
 #'
 #' @examples
@@ -103,10 +103,17 @@ subresultants <- function(qspray1, qspray2, var = 1) {
       )
     }
   }
+  if(n <= 3L) {
+    showFunc <- showQsprayXYZ()
+  } else {
+    showFunc <- showQsprayX1X2X3()
+  }
   lapply(subres, function(S) {
-    qsprayMaker(
+    p <- qsprayMaker(
       powers = Columns(S[["Powers"]]),
       coeffs = S[["Coeffs"]]
     )
+    showQsprayOption(p, "showQspray") <- showFunc
+    p
   })
 }

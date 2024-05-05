@@ -12,7 +12,7 @@
 #'    factorization with their multiplicity.
 #'
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables isConstant qone getConstantTerm
+#' @importFrom qspray qsprayMaker numberOfVariables isConstant qone getConstantTerm showQsprayXYZ showQsprayX1X2X3 showQsprayOption<-
 #' @importFrom gmp as.bigq
 #'
 #' @examples
@@ -84,6 +84,11 @@ squareFreeFactorization <- function(qspray) {
       pows, coeffs
     )
   }
+  if(n <= 3L) {
+    showFunc <- showQsprayXYZ()
+  } else {
+    showFunc <- showQsprayX1X2X3()
+  }
   constantFactor     <- factorization[["constantFactor"]]
   nonConstantFactors <-
     lapply(factorization[["nonConstantFactors"]], function(x) {
@@ -92,6 +97,7 @@ squareFreeFactorization <- function(qspray) {
         powers = Columns(p[["Powers"]]),
         coeffs = p[["Coeffs"]]
       )
+      showQsprayOption(p, "showQspray") <- showFunc
       list("qspray" = p, "multiplicity" = x[["multiplicity"]])
     })
   list(

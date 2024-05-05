@@ -11,7 +11,7 @@
 #'   Otherwise, it returns a \code{qspray} polynomial that does not involve
 #'   the \code{var}-th variable.
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables swapVariables
+#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables swapVariables showQsprayXYZ showQsprayX1X2X3 showQsprayOption<-
 #' @importFrom gmp as.bigq
 #'
 #' @examples
@@ -111,10 +111,17 @@ resultant <- function(qspray1, qspray2, var = 1) {
         ipermutation
       )
     }
+    if(n <= 3L) {
+      showFunc <- showQsprayXYZ()
+    } else {
+      showFunc <- showQsprayX1X2X3()
+    }
     qspray <- qsprayMaker(
       powers = Columns(R[["Powers"]]),
       coeffs = R[["Coeffs"]]
     )
-    permuteVariables(qspray, permutation)
+    qspray <- permuteVariables(qspray, permutation)
+    showQsprayOption(qspray, "showQspray") <- showFunc
+    qspray
   }
 }

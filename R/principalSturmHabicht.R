@@ -11,7 +11,7 @@
 #'   For a multivariate polynomial, this returns a list of \code{qspray}
 #'   polynomials that do not involve the \code{var}-th variable.
 #' @export
-#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables
+#' @importFrom qspray qsprayMaker numberOfVariables permuteVariables showQsprayXYZ showQsprayX1X2X3 showQsprayOption<-
 #' @importFrom gmp as.bigq
 #'
 #' @examples
@@ -86,12 +86,19 @@ principalSturmHabicht <- function(qspray, var = 1) {
         ipermutation
       )
     }
+    if(n <= 3L) {
+      showFunc <- showQsprayXYZ()
+    } else {
+      showFunc <- showQsprayX1X2X3()
+    }
     lapply(PSHsequence, function(psh) {
       p <- qsprayMaker(
         powers = Columns(psh[["Powers"]]),
         coeffs = psh[["Coeffs"]]
       )
-      permuteVariables(p, permutation)
+      p <- permuteVariables(p, permutation)
+      showQsprayOption(p, "showQspray") <- showFunc
+      p
     })
   }
 }
