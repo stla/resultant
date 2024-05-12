@@ -81,7 +81,7 @@ signVariations <- function(x) {
 #'   interval.
 #' @note The roots are not counted with their multiplicity.
 #' @export
-#' @importFrom qspray isUnivariate isQzero isConstant evalQspray leadingTerm
+#' @importFrom qspray isUnivariate isQzero isConstant evalQspray leadingCoefficient
 #' @importFrom gmp as.bigq c_bigq
 #' @importFrom utils head
 #'
@@ -163,7 +163,7 @@ numberOfRealRootsInRightUnboundedInterval <- function(
   } else {
     valueAtAlpha <- evalQspray(qspray, alpha)
     zeroAtAlpha <- valueAtAlpha == 0L
-    valueAtInfinity <- leadingTerm(qspray, 1L)[["coeff"]]
+    valueAtInfinity <- leadingCoefficient(qspray)
     SHsequence <- head(SturmHabicht(qspray, 1L), -1L)
     SHsequence <- Filter(Negate(isQzero), SHsequence)
     valuesAtAlpha <- c(c_bigq(lapply(SHsequence, function(p) {
@@ -173,7 +173,7 @@ numberOfRealRootsInRightUnboundedInterval <- function(
       if(isQzero(p)) {
         as.bigq(0L)
       } else {
-        leadingTerm(p, 1L)[["coeff"]]
+        leadingCoefficient(p)
       }
     })), valueAtInfinity)
     nroots <- signVariations(valuesAtAlpha) - signVariations(valuesAtInfinity)
