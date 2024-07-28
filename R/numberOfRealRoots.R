@@ -69,7 +69,7 @@ signVariations <- function(x) {
 
 #' @title Number of real roots in an interval
 #' @description Number of distinct real roots of a univariate polynomial in
-#'   an interval.
+#'   a given interval.
 #'
 #' @param qspray a univariate \code{qspray} polynomial
 #' @param lower,upper the bounds of the interval, \code{bigq} numbers or

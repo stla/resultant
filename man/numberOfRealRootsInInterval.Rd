@@ -21,7 +21,7 @@ An integer, the number of real roots of the polynomial in the
 }
 \description{
 Number of distinct real roots of a univariate polynomial in
-  an interval.
+  a given interval.
 }
 \note{
 The roots are not counted with their multiplicity.
