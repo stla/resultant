@@ -3,8 +3,8 @@ Title: Utilities for Multivariate Polynomials with Rational Coefficients
 Version: 1.0.0
 Authors@R: 
     person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre"))
-Description: Resultant, subresultants, greatest common divisor, integral 
-    division (aka division without remainder) of two multivariate polynomials 
+Description: Computation of resultant, subresultants, greatest common divisor, 
+    integral division (aka division without remainder) of two multivariate polynomials 
     with rational coefficients, Sturm-Habicht sequence and square-free 
     factorization of a multivariate polynomial with rational coefficients. 
     The computations are performed by the 'C++' library 'CGAL' 
