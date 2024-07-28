@@ -1,6 +1,6 @@
 Package: resultant
-Title: Resultant, Subresultants, and GCD of Two Multivariate Polynomials
-Version: 0.0.0.9000
+Title: Utilities for Multivariate Polynomials with Rational Coefficients
+Version: 1.0.0
 Authors@R: 
     person("Stéphane", "Laurent", , "laurent_step@outlook.fr", role = c("aut", "cre"))
 Description: Resultant, subresultants, greatest common divisor, integral 
@@ -17,9 +17,8 @@ Description: Resultant, subresultants, greatest common divisor, integral
 License: GPL-3
 URL: https://github.com/stla/resultant
 BugReports: https://github.com/stla/resultant/issues
-Remotes: stla/qspray
 Depends:
-    qspray (>= 3.0.0.9000),
+    qspray (>= 3.1.0)
 Imports: 
     Rcpp,
     gmp,
